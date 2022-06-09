@@ -19,39 +19,40 @@
 		<section class="menu-header" id="inicio">
 
 			<div class="brand-logo">
-				<a href="../PaginaHome/home.html"><img src="../img/libros.png" alt=""></a>
+				<a href="../PaginaHome/home.php"><img src="../img/libros.png" alt=""></a>
 			</div>
 
 			<div class="buscador">
 				<input type="search" id="buscador" placeholder="Buscar... " />
-				<a type="submit" class="boton" href="../PaginaBusqueda/busqueda.html"><img src="../img/lupa.png" alt=""></a>
+				<a type="submit" class="boton" href="../PaginaBusqueda/busqueda.php"><img src="../img/lupa.png"
+						alt=""></a>
 
 			</div>
 
 			<div class="carrito">
-				<a href="../PaginaCarrito/carrito.html"><img src="../img/carrito.png" alt=""></a>
+				<a href="../PaginaCarrito/carrito.php"><img src="../img/carrito.png" alt=""></a>
 			</div>
 
 
 			<ul class="navegacion">
 				<li><a href="#Categorias">Categorias</a><span>🡣</span>
 					<ul class="menu-categorias">
-						<li><a href="../PaginaCategorias/drama.html">Drama</a></li>
-						<li><a href="../PaginaCategorias/comedia.html">Comedia</a></li>
-						<li><a href="../PaginaCategorias/autoayuda.html">Autoayuda</a></li>
-						<li><a href="../PaginaCategorias/economia.html">Economia</a></li>
-						<li><a href="../PaginaCategorias/politica.html">Politica</a></li>
-						<li><a href="../PaginaCategorias/ficcion.html">Ficcion y literatura</a></li>
-						<li><a href="../PaginaCategorias/psicologia.html">Psicología</a></li>
-						<li><a href="../PaginaCategorias/ciencia.html">Ciencia</a></li>
-						<li><a href="../PaginaCategorias/infantil.html">Infantil y juvenil</a></li>
+						<li><a href="../PaginaCategorias/drama.php">Drama</a></li>
+						<li><a href="../PaginaCategorias/comedia.php">Comedia</a></li>
+						<li><a href="../PaginaCategorias/autoayuda.php">Autoayuda</a></li>
+						<li><a href="../PaginaCategorias/economia.php">Economia</a></li>
+						<li><a href="../PaginaCategorias/politica.php">Politica</a></li>
+						<li><a href="../PaginaCategorias/ficcion.php">Ficcion y literatura</a></li>
+						<li><a href="../PaginaCategorias/psicologia.php">Psicología</a></li>
+						<li><a href="../PaginaCategorias/ciencia.php">Ciencia</a></li>
+						<li><a href="../PaginaCategorias/infantil.php">Infantil y juvenil</a></li>
 
 					</ul>
 				</li>
 
-				<li><a href="../PaginaAyuda/ayuda.html">Ayuda</a></li>
+				<li><a href="../PaginaAyuda/ayuda.php">Ayuda</a></li>
 				<li><a href="#Contacto">Contacto</a></li>
-				<li><a href="../PaginaIngreso/ingreso.html">Ingresar</a></li>
+				<li><a href="../PaginaIngreso/ingreso.php">Ingresar</a></li>
 
 			</ul>
 
@@ -109,57 +110,57 @@
 	<br>
 	<br>
 	<div class="deals">
-		
-        <h1>Ofertas</h1>
-    
+
+		<h1>Ofertas</h1>
+
 		<div class="contenedor-libros">
 
-			
-			<div class="container">
-				<img src="../img/libro3.png" alt="Avatar" class="image">
-				<div class="overlay">
-					<h3>Los Guardianes</h1>
-					<h4>Autor: Josh Grisham</h1>
-					<h4>$650</h1>
-					<br>
-					<a href="../PaginaLibro/libro.html" class="botonn">Comprar </a>
-				</div>
-			</div>
-			
-
-			
-			<div class="container">
-					
-				<img src="../img/libro3.png" alt="Avatar" class="image">
-				<div class="overlay">
-					<h3>Los Guardianes</h1>
-					<h4>Autor: Josh Grisham</h1>
-					<h4>$650</h1>
-					<br>
-					<a href="../PaginaLibro/libro.html" class="botonn">Comprar </a>
-				</div>
-			</div>
 
 			<div class="container">
 				<img src="../img/libro3.png" alt="Avatar" class="image">
 				<div class="overlay">
 					<h3>Los Guardianes</h1>
-					<h4>Autor: Josh Grisham</h1>
-					<h4>$650</h1>
-					<br>
-					<a href="../PaginaLibro/libro.html" class="botonn">Comprar </a>
+						<h4>Autor: Josh Grisham</h1>
+							<h4>$650</h1>
+								<br>
+								<a href="../PaginaLibro/libro.php" class="botonn">Comprar </a>
 				</div>
 			</div>
-			
-        </div>
+
+
+
+			<div class="container">
+
+				<img src="../img/libro3.png" alt="Avatar" class="image">
+				<div class="overlay">
+					<h3>Los Guardianes</h1>
+						<h4>Autor: Josh Grisham</h1>
+							<h4>$650</h1>
+								<br>
+								<a href="../PaginaLibro/libro.php" class="botonn">Comprar </a>
+				</div>
+			</div>
+
+			<div class="container">
+				<img src="../img/libro3.png" alt="Avatar" class="image">
+				<div class="overlay">
+					<h3>Los Guardianes</h1>
+						<h4>Autor: Josh Grisham</h1>
+							<h4>$650</h1>
+								<br>
+								<a href="../PaginaLibro/libro.php" class="botonn">Comprar </a>
+				</div>
+			</div>
+
+		</div>
 	</div>
 	<br>
 	<br>
-	
+
 	<footer>
 		<div class="brand">
 			<div class="brand-logo">
-				<a href="../PaginaHome/home.html"><img src="../img/libros.png" alt=""></a></div>
+				<a href="../PaginaHome/home.php"><img src="../img/libros.png" alt=""></a></div>
 
 		</div>
 
