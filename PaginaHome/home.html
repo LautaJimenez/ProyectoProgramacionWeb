@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>tienda de ebooks</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+	<link rel="stylesheet" href="estilos.css">
+	<link rel="shortcut icon" href="../img/libros.png">
+	<script language="javascript" type="text/javascript" src="funciones.js"></script>
+</head>
+
+<body>
+
+	<header>
+		<section class="menu-header" id="inicio">
+
+			<div class="brand-logo">
+				<a href="../PaginaHome/home.html"><img src="../img/libros.png" alt=""></a>
+			</div>
+
+			<div class="buscador">
+				<input type="search" id="buscador" placeholder="Buscar... " />
+				<a type="submit" class="boton" href="../PaginaBusqueda/busqueda.html"><img src="../img/lupa.png" alt=""></a>
+
+			</div>
+
+			<div class="carrito">
+				<a href="../PaginaCarrito/carrito.html"><img src="../img/carrito.png" alt=""></a>
+			</div>
+
+
+			<ul class="navegacion">
+				<li><a href="#Categorias">Categorias</a><span>🡣</span>
+					<ul class="menu-categorias">
+						<li><a href="../PaginaCategorias/drama.html">Drama</a></li>
+						<li><a href="../PaginaCategorias/comedia.html">Comedia</a></li>
+						<li><a href="../PaginaCategorias/autoayuda.html">Autoayuda</a></li>
+						<li><a href="../PaginaCategorias/economia.html">Economia</a></li>
+						<li><a href="../PaginaCategorias/politica.html">Politica</a></li>
+						<li><a href="../PaginaCategorias/ficcion.html">Ficcion y literatura</a></li>
+						<li><a href="../PaginaCategorias/psicologia.html">Psicología</a></li>
+						<li><a href="../PaginaCategorias/ciencia.html">Ciencia</a></li>
+						<li><a href="../PaginaCategorias/infantil.html">Infantil y juvenil</a></li>
+
+					</ul>
+				</li>
+
+				<li><a href="../PaginaAyuda/ayuda.html">Ayuda</a></li>
+				<li><a href="#Contacto">Contacto</a></li>
+				<li><a href="../PaginaIngreso/ingreso.html">Ingresar</a></li>
+
+			</ul>
+
+
+		</section>
+
+	</header>
+
+	<!-- Slideshow container -->
+	<div class="slideshow-container">
+
+		<!-- Full-width images with number and caption text -->
+		<div class="mySlides fade">
+	  		<br>
+	  		<img src="../img/banner1.jpg" style="width:100%">
+		</div>
+  
+		<div class="mySlides fade">
+	  		<br>
+	  		<img src="../img/banner2.jpg" style="width:100%">
+	  
+		</div>
+  
+		<div class="mySlides fade">
+	 		 <br>
+	  		<img src="../img/banner3.jpg" style="width:100%">
+	  
+		</div>
+  
+		<!-- Next and previous buttons -->
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+  
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+	<span class="dot" onclick="currentSlide(1)"></span>
+	<span class="dot" onclick="currentSlide(2)"></span>
+	<span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+	  
+  	<div id="mybotónContainer">
+		<button class="botón active" onclick="filterSelection('all')"> Mostrar todo</button>
+		<button class="botón" onclick="filterSelection('nature')"> Best Sellers</button>
+		<button class="botón" onclick="filterSelection('cars')"> Mas Buscados</button>
+
+	</div>
+	<div class="main">
+		
+		<!-- Portfolio Gallery Grid -->
+		<div class="col">
+			
+			<div class="column nature">
+				<div class="content">
+					<img src="../img/libro15.png" alt="books" style="width:60%">
+					<h4>Libro</h4>
+					<h5>$650</h5>
+					<a href="../PaginaLibro/libro.html" class="button">Comprar </a>
+				</div>
+			</div>
+			<div class="column nature">
+				<div class="content">
+					<img src="../img/libro15.png" alt="books" style="width:60%">
+					<h4>Libro</h4>
+					<h5>$650</h5>
+					<a href="../PaginaLibro/libro.html" class="button">Comprar </a>
+				</div>
+			</div>
+	
+			<div class="column cars">
+				<div class="content">
+					<img src="../img/libro18.png" alt="books" style="width:60%">
+					<h4>Libro</h4>
+					<h5>$650</h5>
+					<a href="../PaginaLibro/libro.html" class="button">Comprar </a>
+				</div>
+			</div>
+			
+
+			<div class="column cars">
+				<div class="content">
+					<img src="../img/libro18.png" alt="books" style="width:60%">
+					<h4>Libro</h4>
+					<h5>$650</h5>
+					<a href="../PaginaLibro/libro.html" class="button">Comprar </a>
+				</div>
+			</div>
+			<div class="column cars">
+				<div class="content">
+					<img src="../img/libro18.png" alt="books" style="width:60%">
+					<h4>Libro</h4>
+					<h5>$650</h5>
+					<a href="../PaginaLibro/libro.html" class="button">Comprar </a>
+				</div>
+			</div>
+			
+			<div class="column cars">
+				<div class="content">
+					<img src="../img/libro18.png" alt="books" style="width:60%">
+					<h4>Libro</h4>
+					<h5>$650</h5>
+					<a href="../PaginaLibro/libro.html" class="button">Comprar </a>
+				</div>
+			</div>
+			<div class="column cars">
+				<div class="content">
+					<img src="../img/libro18.png" alt="books" style="width:60%">
+					<h4>Libro</h4>
+					<h5>$650</h5>
+					<a href="../PaginaLibro/libro.html" class="button">Comprar </a>
+				</div>
+			</div>
+			<div class="column cars">
+				<div class="content">
+					<img src="../img/libro18.png" alt="books" style="width:60%">
+					<h4>Libro</h4>
+					<h5>$650</h5>
+					<a href="../PaginaLibro/libro.html" class="button">Comprar </a>
+				</div>
+			</div>
+		
+		</div>
+
+	</div>
+	<script language="javascript" type="text/javascript" src="extras.js"></script>
+
+
+
+	<div class="deals">
+		
+        <h1>Ofertas</h1>
+    
+		<div class="contenedor-libros">
+
+			
+			<div class="container">
+				<img src="../img/libro3.png" alt="Avatar" class="image">
+				<div class="overlay">
+					<h3>Los Guardianes</h1>
+					<h4>Autor: Josh Grisham</h1>
+					<h4>$650</h1>
+					<br>
+					<a href="../PaginaLibro/libro.html" class="botonn">Comprar </a>
+				</div>
+			</div>
+			
+
+			
+			<div class="container">
+					
+				<img src="../img/libro3.png" alt="Avatar" class="image">
+				<div class="overlay">
+					<h3>Los Guardianes</h1>
+					<h4>Autor: Josh Grisham</h1>
+					<h4>$650</h1>
+					<br>
+					<a href="../PaginaLibro/libro.html" class="botonn">Comprar </a>
+				</div>
+			</div>
+
+			<div class="container">
+				<img src="../img/libro3.png" alt="Avatar" class="image">
+				<div class="overlay">
+					<h3>Los Guardianes</h1>
+					<h4>Autor: Josh Grisham</h1>
+					<h4>$650</h1>
+					<br>
+					<a href="../PaginaLibro/libro.html" class="botonn">Comprar </a>
+				</div>
+			</div>
+			
+
+		
+			
+
+            
+			
+        </div>
+	</div>
+
+
+	<div class="card-brand">
+		<a href="../PaginaLibro/libro.html">
+			<div class="single-card" style="background-image: url('../img/img7.jpg');"></div>
+		</a>
+		<a href="../PaginaLibro/libro.html">
+			<div class="single-card" style="background-image: url('../img/5.jpg');"></div>
+		</a>
+		<a href="../PaginaLibro/libro.html">
+			<div class="single-card" style="background-image: url('../img/6.jpg');"></div>
+		</a>
+	</div>
+
+	<footer>
+		<div class="brand">
+			<div class="brand-logo">
+				<a href="../PaginaHome/home.html"><img src="../img/libros.png" alt=""></a></div>
+
+		</div>
+
+		<div class="footer-menu" id="Contacto">
+
+			<div class="menu-card">
+				<h4>Email</h4>
+				<a href="mailto:web@mail.com">web@mail.com</a>
+			</div>
+			<div class="menu-card">
+				<h4>Telefono</h4>
+				<a href="">+51 11-1111-1111</a>
+			</div>
+			<div class="menu-card">
+				<h4>Locacion</h4>
+				<a href="https://goo.gl/maps/o8E7SbdoYxqCvhM47">Buenos Aires</a>
+			</div>
+
+		</div>
+	</footer>
+
+	<!-- JavaScript -->
+
+</body>
+
+</html>

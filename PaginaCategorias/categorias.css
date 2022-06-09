@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+
+* {
+	font-family: 'Raleway', sans-serif;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+:root{
+    scroll-behavior: smooth;
+}
+
+body {
+	background: #f4f5f9;
+}
+
+header {
+	width: fit-content;
+	height: 80px;
+	margin: 0;
+	width: 100%;
+	height: 50px;
+	background: #37455f;
+}
+ 
+/* LOGO */
+
+.brand-logo img{
+	height: 40px;
+	width: 45px;
+	float: left;
+	margin-left: 10px;
+	margin-top: 5px;
+}
+
+/* BUSCADOR */
+
+.buscador{
+    margin-top: 5px;
+	display: inline-block;
+	margin-bottom: auto;
+	margin-left: 25px;
+}
+
+.buscador input{
+    width: 600px;
+    height: 40px;   
+    justify-content: center;
+	border-radius: 10px 0 0 10px;
+	border-color: black;
+	border-right-color: black thin;
+}
+
+.buscador ::placeholder{
+    padding-left: 10px;
+}
+.boton{
+	float: right;
+	background: white;
+	padding: 10px 7px 2px 5px;
+	margin-left: 0;
+	margin-top: 2px;
+	border-radius: 0 10px 10px 0;
+	border-color: black;
+	border-left: transparent;
+}
+.boton img{
+	height: 20px;
+	width: 20px;
+}
+
+/* NAVEGACION */
+
+.navegacion{
+	margin-top: 15px;
+	margin-right: 25px;
+	font-weight: 600;
+	float: right;
+	
+}
+
+.navegacion li{
+	padding-right: 15px;
+}
+
+.menu-categorias{
+	padding-top: 16px;
+}
+
+.navegacion span{
+	color: rgba(255, 255, 255, 0.486);
+	font-size: 10px;
+}
+
+.navegacion > li{
+	float: left;
+}
+
+.navegacion li a{
+	color: white;
+	margin: 5px;
+	text-decoration: none;
+	
+}
+
+.navegacion li ul li{
+	background: #37455f;
+	color: white;
+	padding: 10px 15px;
+	display: block;
+}
+
+.navegacion a:hover{
+	text-decoration: underline;
+}
+
+.navegacion li ul{
+	display: none;
+	position: absolute;
+	min-width: 140px;
+	z-index: 100; /*LO PONE ARRIBA DE TODA LA PAGINA */
+}
+
+.navegacion li:hover > ul{
+	display: block;
+}
+
+.navegacion li ul li:hover{
+	background-color: #22375e;
+}
+
+/* CARRITO */
+
+.carrito{
+	float: right;
+	margin-top: 8px;
+	margin-right: 20px;
+}
+
+.carrito img{
+	width: 30px;
+	height: 30px;
+}
+
+/* MAIN */
+
+.titulo{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 150%;
+    color: grey;
+}
+
+.contenedor-libros{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 50px
+}
+
+.libro{
+    margin-bottom: 40px;
+    margin-right: 50px;
+    margin-left: 50px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow:  0 0 6px 0 rgba(0, 0, 0, .5);
+    border-radius: 5px;
+}
+
+.libro img{
+    width: 150px;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    border-radius: 5px;
+}
+
+.info{
+    text-align: center;
+    color: grey;
+}
+
+/* FOOTER */
+
+footer{
+    background: #37455f;
+    padding: 60px 0 30px 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+.footer-menu { 
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding: 50x;
+}
+
+.menu-card a{
+    color: #ccc;
+    text-decoration: none;
+}
+
+.menu-card a:hover{
+    cursor: hand;
+    text-decoration: underline;    
+}
+
+.menu-card{
+    text-align: center;
+}
+
+.menu-card h4{
+    color: #ffff;
+    border-bottom: 3px solid #7e7d7d;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    
+}
