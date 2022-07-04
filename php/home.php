@@ -1,3 +1,5 @@
+<?php include("conexion.php")?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,57 +9,14 @@
 	<title>tienda de ebooks</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
 	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-	<link rel="stylesheet" href="estilos.css">
+	<link rel="stylesheet" href="../css/estilos.css">
 	<link rel="shortcut icon" href="../img/libros.png">
-	<script language="javascript" type="text/javascript" src="funciones.js"></script>
+	<script language="javascript" type="text/javascript" src="/ProyectoWeb/js/funciones.js"></script>
 </head>
 
 <body>
 
-	<header>
-		<section class="menu-header" id="inicio">
-
-			<div class="brand-logo">
-				<a href="../PaginaHome/home.php"><img src="../img/libros.png" alt=""></a>
-			</div>
-
-			<div class="buscador">
-				<input type="search" id="buscador" placeholder="Buscar... " />
-				<a type="submit" class="boton" href="../PaginaBusqueda/busqueda.php"><img src="../img/lupa.png" alt=""></a>
-
-			</div>
-
-			<div class="carrito">
-				<a href="../PaginaCarrito/carrito.php"><img src="../img/carrito.png" alt=""></a>
-			</div>
-
-
-			<ul class="navegacion">
-				<li><a href="#Categorias">Categorias</a><span>🡣</span>
-					<ul class="menu-categorias">
-						<li><a href="../PaginaCategorias/drama.php">Drama</a></li>
-						<li><a href="../PaginaCategorias/comedia.php">Comedia</a></li>
-						<li><a href="../PaginaCategorias/autoayuda.php">Autoayuda</a></li>
-						<li><a href="../PaginaCategorias/economia.php">Economia</a></li>
-						<li><a href="../PaginaCategorias/politica.php">Politica</a></li>
-						<li><a href="../PaginaCategorias/ficcion.php">Ficcion y literatura</a></li>
-						<li><a href="../PaginaCategorias/psicologia.php">Psicología</a></li>
-						<li><a href="../PaginaCategorias/ciencia.php">Ciencia</a></li>
-						<li><a href="../PaginaCategorias/infantil.php">Infantil y juvenil</a></li>
-
-					</ul>
-				</li>
-
-				<li><a href="../PaginaAyuda/ayuda.php">Ayuda</a></li>
-				<li><a href="#Contacto">Contacto</a></li>
-				<li><a href="../PaginaIngreso/ingreso.php">Ingresar</a></li>
-
-			</ul>
-
-
-		</section>
-
-	</header>
+<?php include("header.php")?>
 
 	<!-- Slideshow container -->
 	<div class="slideshow-container">
@@ -110,7 +69,7 @@
 					<img src="../img/libro15.png" alt="books" style="width:60%">
 					<h4>Libro</h4>
 					<h5>$650</h5>
-					<a href="../PaginaLibro/libro.php" class="button">Comprar </a>
+					<a href="/ProyectoWeb/php/libro.php" class="button">Comprar </a>
 				</div>
 			</div>
 			<div class="column nature">
@@ -118,7 +77,7 @@
 					<img src="../img/libro15.png" alt="books" style="width:60%">
 					<h4>Libro</h4>
 					<h5>$650</h5>
-					<a href="../PaginaLibro/libro.php" class="button">Comprar </a>
+					<a href="/ProyectoWeb/php/libro.php" class="button">Comprar </a>
 				</div>
 			</div>
 	
@@ -127,7 +86,7 @@
 					<img src="../img/libro18.png" alt="books" style="width:60%">
 					<h4>Libro</h4>
 					<h5>$650</h5>
-					<a href="../PaginaLibro/libro.php" class="button">Comprar </a>
+					<a href="/ProyectoWeb/php/libro.php" class="button">Comprar </a>
 				</div>
 			</div>
 			
@@ -137,7 +96,7 @@
 					<img src="../img/libro18.png" alt="books" style="width:60%">
 					<h4>Libro</h4>
 					<h5>$650</h5>
-					<a href="../PaginaLibro/libro.php" class="button">Comprar </a>
+					<a href="/ProyectoWeb/php/libro.php" class="button">Comprar </a>
 				</div>
 			</div>
 			<div class="column cars">
@@ -145,7 +104,7 @@
 					<img src="../img/libro18.png" alt="books" style="width:60%">
 					<h4>Libro</h4>
 					<h5>$650</h5>
-					<a href="../PaginaLibro/libro.php" class="button">Comprar </a>
+					<a href="/ProyectoWeb/php/libro.php" class="button">Comprar </a>
 				</div>
 			</div>
 			
@@ -154,7 +113,7 @@
 					<img src="../img/libro18.png" alt="books" style="width:60%">
 					<h4>Libro</h4>
 					<h5>$650</h5>
-					<a href="../PaginaLibro/libro.php" class="button">Comprar </a>
+					<a href="/ProyectoWeb/php/libro.php" class="button">Comprar </a>
 				</div>
 			</div>
 			<div class="column cars">
@@ -162,7 +121,7 @@
 					<img src="../img/libro18.png" alt="books" style="width:60%">
 					<h4>Libro</h4>
 					<h5>$650</h5>
-					<a href="../PaginaLibro/libro.php" class="button">Comprar </a>
+					<a href="/ProyectoWeb/php/libro.php" class="button">Comprar </a>
 				</div>
 			</div>
 			<div class="column cars">
@@ -170,14 +129,14 @@
 					<img src="../img/libro18.png" alt="books" style="width:60%">
 					<h4>Libro</h4>
 					<h5>$650</h5>
-					<a href="../PaginaLibro/libro.php" class="button">Comprar </a>
+					<a href="/ProyectoWeb/php/libro.php" class="button">Comprar </a>
 				</div>
 			</div>
 		
 		</div>
 
 	</div>
-	<script language="javascript" type="text/javascript" src="extras.js"></script>
+	<script language="javascript" type="text/javascript" src="/ProyectoWeb/js/extras.js"></script>
 
 
 
@@ -195,7 +154,7 @@
 					<h4>Autor: Josh Grisham</h1>
 					<h4>$650</h1>
 					<br>
-					<a href="../PaginaLibro/libro.php" class="botonn">Comprar </a>
+					<a href="/ProyectoWeb/php/libro.php" class="botonn">Comprar </a>
 				</div>
 			</div>
 			
@@ -209,7 +168,7 @@
 					<h4>Autor: Josh Grisham</h1>
 					<h4>$650</h1>
 					<br>
-					<a href="../PaginaLibro/libro.php" class="botonn">Comprar </a>
+					<a href="/ProyectoWeb/php/libro.php" class="botonn">Comprar </a>
 				</div>
 			</div>
 
@@ -220,7 +179,7 @@
 					<h4>Autor: Josh Grisham</h1>
 					<h4>$650</h1>
 					<br>
-					<a href="../PaginaLibro/libro.php" class="botonn">Comprar </a>
+					<a href="/ProyectoWeb/php/libro.php" class="botonn">Comprar </a>
 				</div>
 			</div>
 			
@@ -235,41 +194,18 @@
 
 
 	<div class="card-brand">
-		<a href="../PaginaLibro/libro.php">
+		<a href="/ProyectoWeb/php/libro.php">
 			<div class="single-card" style="background-image: url('../img/img7.jpg');"></div>
 		</a>
-		<a href="../PaginaLibro/libro.php">
+		<a href="/ProyectoWeb/php/libro.php">
 			<div class="single-card" style="background-image: url('../img/5.jpg');"></div>
 		</a>
-		<a href="../PaginaLibro/libro.php">
+		<a href="/ProyectoWeb/php/libro.php">
 			<div class="single-card" style="background-image: url('../img/6.jpg');"></div>
 		</a>
 	</div>
 
-	<footer>
-		<div class="brand">
-			<div class="brand-logo">
-				<a href="../PaginaHome/home.php"><img src="../img/libros.png" alt=""></a></div>
-
-		</div>
-
-		<div class="footer-menu" id="Contacto">
-
-			<div class="menu-card">
-				<h4>Email</h4>
-				<a href="mailto:web@mail.com">web@mail.com</a>
-			</div>
-			<div class="menu-card">
-				<h4>Telefono</h4>
-				<a href="">+51 11-1111-1111</a>
-			</div>
-			<div class="menu-card">
-				<h4>Locacion</h4>
-				<a href="https://goo.gl/maps/o8E7SbdoYxqCvhM47">Buenos Aires</a>
-			</div>
-
-		</div>
-	</footer>
+	<?php include("footer.php")?>
 
 	<!-- JavaScript -->
 

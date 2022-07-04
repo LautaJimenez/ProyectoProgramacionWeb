@@ -7,53 +7,14 @@
 	<title>tienda de ebooks</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
 	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-	<link rel="stylesheet" href="CargarLibro.css">
+	<link rel="stylesheet" href="../css/CargarLibro.css">
 	<link rel="shortcut icon" href="../img/libros.png">
 
 </head>
 
 <body>
 
-	<header>
-		<section class="menu-header" id="inicio">
-
-			<div class="brand-logo">
-				<a href="../PaginaHome/home.php"><img src="../img/libros.png" alt=""></a>
-			</div>
-
-			<div class="buscador">
-				<input type="search" id="buscador" placeholder="Buscar... " />
-				<a type="submit" class="boton" href="../PaginaBusqueda/busqueda.php"><img src="../img/lupa.png" alt=""></a>
-
-			</div>
-
-			<div class="carrito">
-				<a href="../PaginaCarrito/carrito.php"><img src="../img/carrito.png" alt=""></a>
-			</div>
-
-
-			<ul class="navegacion">
-				<li><a href="#Categorias">Categorias</a><span>🡣</span>
-					<ul class="menu-categorias">
-						<li><a href="../PaginaCategorias/drama.php">Drama</a></li>
-						<li><a href="../PaginaCategorias/comedia.php">Comedia</a></li>
-						<li><a href="../PaginaCategorias/autoayuda.php">Autoayuda</a></li>
-						<li><a href="../PaginaCategorias/economia.php">Economia</a></li>
-						<li><a href="../PaginaCategorias/politica.php">Politica</a></li>
-						<li><a href="../PaginaCategorias/ficcion.php">Ficcion y literatura</a></li>
-						<li><a href="../PaginaCategorias/psicologia.php">Psicología</a></li>
-						<li><a href="../PaginaCategorias/ciencia.php">Ciencia</a></li>
-						<li><a href="../PaginaCategorias/infantil.php">Infantil y juvenil</a></li>
-					</ul>
-				</li>
-
-				<li><a href="../PaginaAyuda/ayuda.php">Ayuda</a></li>
-				<li><a href="#Contacto">Contacto</a></li>
-				<li><a href="../PaginaIngreso/ingreso.php">Ingresar</a></li>
-			</ul>
-
-		</section>
-	</header>
+	<?php include("header.php")?>
 
 	<main>
 		<section class="titulo">
@@ -136,32 +97,9 @@
 	</main>
 
 
-	<footer>
-		<div class="brand">
-			<div class="brand-logo">
-				<a href="../PaginaHome/home.php"><img src="../img/libros.png" alt=""></a></div>
+	<?php include("footer.php")?>
 
-		</div>
-
-		<div class="footer-menu" id="Contacto">
-
-			<div class="menu-card">
-				<h4>Email</h4>
-				<a href="mailto:web@mail.com">web@mail.com</a>
-			</div>
-			<div class="menu-card">
-				<h4>Telefono</h4>
-				<a href="">+51 11-1111-1111</a>
-			</div>
-			<div class="menu-card">
-				<h4>Locacion</h4>
-				<a href="https://goo.gl/maps/o8E7SbdoYxqCvhM47">Buenos Aires</a>
-			</div>
-
-		</div>
-	</footer>
-
-	<script src="../PaginaCargarLibro/CargarLibro.js"></script>
+	<script src="/ProyectoWeb/js/CargarLibro.js"></script>
 
 </body>
 

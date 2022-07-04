@@ -7,59 +7,16 @@
 	<title>tienda de ebooks</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
 	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    <link rel="stylesheet" href="busqueda.css">
+    <link rel="stylesheet" href="../css/busqueda.css">
 	<link rel="shortcut icon" href="../img/libros.png">
 	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.1/src/easytimer.min.js"></script>
-	<script language="javascript" type="text/javascript" src="../PaginaHome/funciones.js"></script>
+	<script language="javascript" type="text/javascript" src="/ProyectoWeb/js/funciones.js"></script>
 </head>
 
 <body>
 
-	<header>
-		<section class="menu-header" id="inicio">
-
-			<div class="brand-logo">
-				<a href="../PaginaHome/home.php"><img src="../img/libros.png" alt=""></a>
-			</div>
-
-			<div class="buscador">
-				<input type="search" id="buscador" placeholder="Buscar... " />
-				<a type="submit" class="boton" href="../PaginaBusqueda/busqueda.php"><img src="../img/lupa.png" alt=""></a>
-
-			</div>
-
-			<div class="carrito">
-				<a href="../PaginaCarrito/carrito.php"><img src="../img/carrito.png" alt=""></a>
-			</div>
-
-
-			<ul class="navegacion">
-				<li><a href="#Categorias">Categorias</a><span>🡣</span>
-					<ul class="menu-categorias">
-						<li><a href="../PaginaCategorias/drama.php">Drama</a></li>
-						<li><a href="../PaginaCategorias/comedia.php">Comedia</a></li>
-						<li><a href="../PaginaCategorias/autoayuda.php">Autoayuda</a></li>
-						<li><a href="../PaginaCategorias/economia.php">Economia</a></li>
-						<li><a href="../PaginaCategorias/politica.php">Politica</a></li>
-						<li><a href="../PaginaCategorias/ficcion.php">Ficcion y literatura</a></li>
-						<li><a href="../PaginaCategorias/psicologia.php">Psicología</a></li>
-						<li><a href="../PaginaCategorias/ciencia.php">Ciencia</a></li>
-						<li><a href="../PaginaCategorias/infantil.php">Infantil y juvenil</a></li>
-
-					</ul>
-				</li>
-
-				<li><a href="../PaginaAyuda/ayuda.php">Ayuda</a></li>
-				<li><a href="#Contacto">Contacto</a></li>
-				<li><a href="../PaginaIngreso/ingreso.php">Ingresar</a></li>
-
-			</ul>
-
-
-		</section>
-
-	</header>
+    <?php include("header.php")?>
 
 	
 
@@ -75,7 +32,7 @@
 					<p>
                         <img src="../img/libro4.png" alt="Smiley face" style="float:left;width:110px;height:150px;">
                         <h1 style="display: inline"> Largo pétalo de mar
-                            <a href="../PaginaCargarLibro/EditarLibro.php" class="edicion">Editar </a>
+                            <a href="/ProyectoWeb/php/EditarLibro.php" class="edicion">Editar </a>
                         </h1>
                         <br>
                         <h1 style="display: inline">Autor: Isabel Allende</h1>
@@ -84,7 +41,7 @@
                             <a href="" class="eliminacion">Eliminar </a>
                         </h3>
                         <br>
-                        <a href="../PaginaLibro/libro.php" class="btn">Comprar </a>
+                        <a href="/ProyectoWeb/php/libro.php" class="btn">Comprar </a>
                         
                     </p>
                     
@@ -94,7 +51,7 @@
 					<p>
                         <img src="../img/libro5.png" alt="Smiley face" style="float:left;width:110px;height:150px;">
                         <h1 style="display: inline">El Duelo
-                            <a href="../PaginaCargarLibro/EditarLibro.php" class="edicion">Editar </a>
+                            <a href="/ProyectoWeb/php/EditarLibro.php" class="edicion">Editar </a>
                         </h1>
                         <br>
                         <h1 style="display: inline">Autor: Gabriel Rolón</h1>
@@ -103,14 +60,14 @@
                             <a href="" class="eliminacion">Eliminar </a>
                         </h3>
                         <br>
-                        <a href="../PaginaLibro/libro.php" class="btn">Comprar </a>
+                        <a href="/ProyectoWeb/php/libro.php" class="btn">Comprar </a>
                     </p>
 				</section>
 				<section class="item-listado">
 					<p>
                         <img src="../img/libro14.png" alt="Smiley face" style="float:left;width:110px;height:150px;">
                         <h1 style="display: inline"> EL libro de los abrazos
-                            <a href="../PaginaCargarLibro/EditarLibro.php" class="edicion">Editar </a>
+                            <a href="/ProyectoWeb/php/EditarLibro.php" class="edicion">Editar </a>
                         
                         </h1>
                         <br>
@@ -120,14 +77,14 @@
                             <a href="" class="eliminacion">Eliminar </a>
                         </h3>
                         <br>
-                        <a href="../PaginaLibro/libro.php" class="btn">Comprar </a>
+                        <a href="/ProyectoWeb/php/libro.php" class="btn">Comprar </a>
                     </p>
 				</section>
 				<section class="item-listado">
 					<p>
                         <img src="../img/libro13.png" alt="Smiley face" style="float:left;width:110px;height:150px;">
                         <h1 style="display: inline"> 1984
-                            <a href="../PaginaCargarLibro/EditarLibro.php" class="edicion">Editar </a>
+                            <a href="/ProyectoWeb/php/EditarLibro.php" class="edicion">Editar </a>
                         </h1>
                         <br>
                         <h1 style="display: inline">Autor: George Orwell</h1>
@@ -136,14 +93,14 @@
                             <a href="" class="eliminacion">Eliminar </a>
                         </h3>
                         <br>
-                        <a href="../PaginaLibro/libro.php" class="btn">Comprar </a>
+                        <a href="/ProyectoWeb/php/libro.php" class="btn">Comprar </a>
                     </p>
                 </section>
                 <section class="item-listado">
 					<p>
                         <img src="../img/libro12.png" alt="Smiley face" style="float:left;width:110px;height:150px;">
                         <h1 style="display: inline"> Harry Potter y la Orden del Fénix
-                            <a href="../PaginaCargarLibro/EditarLibro.php" class="edicion">Editar </a>
+                            <a href="/ProyectoWeb/php/EditarLibro.php" class="edicion">Editar </a>
                         </h1>
                         <br>
                         <h1 style="display: inline">Autor: J.K Rowling</h1>
@@ -152,14 +109,14 @@
                             <a href="" class="eliminacion">Eliminar </a>
                         </h3>
                         <br>
-                        <a href="../PaginaLibro/libro.php" class="btn">Comprar </a>
+                        <a href="/ProyectoWeb/php/libro.php" class="btn">Comprar </a>
                     </p>
                 </section>
                 <section class="item-listado">
 					<p>
                         <img src="../img/libro11.png" alt="Smiley face" style="float:left;width:110px;height:150px;">
                         <h1 style="display: inline"> Harry Potter y la Piedra Filosofal
-                            <a href="../PaginaCargarLibro/EditarLibro.php" class="edicion">Editar </a>
+                            <a href="/ProyectoWeb/php/EditarLibro.php" class="edicion">Editar </a>
                         </h1>
                         <br>
                         <h1 style="display: inline">Autor: J.K Rowling</h1>
@@ -168,14 +125,14 @@
                             <a href="" class="eliminacion">Eliminar </a>
                         </h3>
                         <br>
-                        <a href="../PaginaLibro/libro.php" class="btn">Comprar </a>
+                        <a href="/ProyectoWeb/php/libro.php" class="btn">Comprar </a>
                     </p>
                 </section>
                 <section class="item-listado">
 					<p>
                         <img src="../img/libro10.png" alt="Smiley face" style="float:left;width:110px;height:150px;">
                         <h1 style="display: inline"> Cómo Provocar un Incendio y Por Qué
-                            <a href="../PaginaCargarLibro/EditarLibro.php" class="edicion">Editar </a>
+                            <a href="/ProyectoWeb/php/EditarLibro.php" class="edicion">Editar </a>
                         </h1>
                         <br>
                         <h1 style="display: inline">Autor: Jesse Ball</h1>
@@ -184,7 +141,7 @@
                             <a href="" class="eliminacion">Eliminar </a>
                         </h3>
                         <br>
-                        <a href="../PaginaLibro/libro.php" class="btn">Comprar </a>
+                        <a href="/ProyectoWeb/php/libro.php" class="btn">Comprar </a>
                     </p>
                 </section>
                 
@@ -197,30 +154,7 @@
 
 	
 
-	<footer>
-		<div class="brand">
-			<div class="brand-logo">
-				<a href="../PaginaHome/home.php"><img src="../img/libros.png" alt=""></a></div>
-
-		</div>
-
-		<div class="footer-menu" id="Contacto">
-
-			<div class="menu-card">
-				<h4>Email</h4>
-				<a href="mailto:web@mail.com">web@mail.com</a>
-			</div>
-			<div class="menu-card">
-				<h4>Telefono</h4>
-				<a href="">+51 11-1111-1111</a>
-			</div>
-			<div class="menu-card">
-				<h4>Locacion</h4>
-				<a href="https://goo.gl/maps/o8E7SbdoYxqCvhM47">Buenos Aires</a>
-			</div>
-
-		</div>
-	</footer>
+	<?php include("footer.php")?>
 
 	<!-- JavaScript -->
 
