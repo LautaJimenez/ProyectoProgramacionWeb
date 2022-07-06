@@ -1,13 +1,10 @@
 <?php 
-    $conn = mysqli_connect(
-        'localhost',
-        'root',
-        '',
-        'proyecto'
-    );
+    
+    function connectDB(){
 
-
-    if(isset($conn)){
-        echo 'Se conecto la base de datos';
+        $conn = mysqli_connect('localhost','root','','proyecto');
+        
+        return $conn;
     }
+
 ?>

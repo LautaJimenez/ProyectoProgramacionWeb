@@ -1,5 +1,3 @@
-<?php include("conexion.php")?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,185 +9,173 @@
 	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 	<link rel="stylesheet" href="../css/estilos.css">
 	<link rel="shortcut icon" href="../img/libros.png">
+	<script language="javascript" type="text/javascript" src="/ProyectoWeb/js/extras.js"></script>
 	<script language="javascript" type="text/javascript" src="/ProyectoWeb/js/funciones.js"></script>
+
+
 </head>
 
 <body>
 
-<?php include("header.php")?>
+	<?php 
+
+	include("header.php");
+
+	// CARRUSEL
+
+	print <<< END
 
 	<!-- Slideshow container -->
 	<div class="slideshow-container">
 
 		<!-- Full-width images with number and caption text -->
 		<div class="mySlides fade">
-	  		<br>
-	  		<img src="../img/banner1.jpg" style="width:100%">
+			<br>
+			<img src="../img/banner1.jpg" style="width:100%">
 		</div>
-  
+
 		<div class="mySlides fade">
-	  		<br>
-	  		<img src="../img/banner2.jpg" style="width:100%">
-	  
+			<br>
+			<img src="../img/banner2.jpg" style="width:100%">
+
 		</div>
-  
+
 		<div class="mySlides fade">
-	 		 <br>
-	  		<img src="../img/banner3.jpg" style="width:100%">
-	  
+			<br>
+			<img src="../img/banner3.jpg" style="width:100%">
+
 		</div>
-  
+
 		<!-- Next and previous buttons -->
 		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 		<a class="next" onclick="plusSlides(1)">&#10095;</a>
-  </div>
-  <br>
-  
-  <!-- The dots/circles -->
-  <div style="text-align:center">
-	<span class="dot" onclick="currentSlide(1)"></span>
-	<span class="dot" onclick="currentSlide(2)"></span>
-	<span class="dot" onclick="currentSlide(3)"></span>
-  </div>
+	</div>
+	<br>
 
-	  
-  	<div id="mybotónContainer">
-		<button class="botón active" onclick="filterSelection('all')"> Mostrar todo</button>
-		<button class="botón" onclick="filterSelection('nature')"> Best Sellers</button>
-		<button class="botón" onclick="filterSelection('cars')"> Mas Buscados</button>
+	<!-- The dots/circles -->
+	<div style="text-align:center">
+		<span class="dot" onclick="currentSlide(1)"></span>
+		<span class="dot" onclick="currentSlide(2)"></span>
+		<span class="dot" onclick="currentSlide(3)"></span>
+	</div>
+
+
+	<div id="mybotonContainer">
+		<button class="boton active" onclick="filterSelection('all')"> Mostrar todo</button>
+		<button class="boton" onclick="filterSelection('nature')"> Best Sellers</button>
+		<button class="boton" onclick="filterSelection('cars')"> Mas Buscados</button>
 
 	</div>
-	<div class="main">
-		
-		<!-- Portfolio Gallery Grid -->
-		<div class="col">
-			
-			<div class="column nature">
-				<div class="content">
-					<img src="../img/libro15.png" alt="books" style="width:60%">
-					<h4>Libro</h4>
-					<h5>$650</h5>
-					<a href="/ProyectoWeb/php/libro.php" class="button">Comprar </a>
-				</div>
-			</div>
-			<div class="column nature">
-				<div class="content">
-					<img src="../img/libro15.png" alt="books" style="width:60%">
-					<h4>Libro</h4>
-					<h5>$650</h5>
-					<a href="/ProyectoWeb/php/libro.php" class="button">Comprar </a>
-				</div>
-			</div>
+
 	
-			<div class="column cars">
-				<div class="content">
-					<img src="../img/libro18.png" alt="books" style="width:60%">
-					<h4>Libro</h4>
-					<h5>$650</h5>
-					<a href="/ProyectoWeb/php/libro.php" class="button">Comprar </a>
-				</div>
-			</div>
-			
+	<div class="main">
+		<div class = "col">
+	END;
+	
+	MostrarLibros();
+	print <<< END
+		</div>	
+	</div> 
+	END;
 
-			<div class="column cars">
-				<div class="content">
-					<img src="../img/libro18.png" alt="books" style="width:60%">
-					<h4>Libro</h4>
-					<h5>$650</h5>
-					<a href="/ProyectoWeb/php/libro.php" class="button">Comprar </a>
-				</div>
-			</div>
-			<div class="column cars">
-				<div class="content">
-					<img src="../img/libro18.png" alt="books" style="width:60%">
-					<h4>Libro</h4>
-					<h5>$650</h5>
-					<a href="/ProyectoWeb/php/libro.php" class="button">Comprar </a>
-				</div>
-			</div>
-			
-			<div class="column cars">
-				<div class="content">
-					<img src="../img/libro18.png" alt="books" style="width:60%">
-					<h4>Libro</h4>
-					<h5>$650</h5>
-					<a href="/ProyectoWeb/php/libro.php" class="button">Comprar </a>
-				</div>
-			</div>
-			<div class="column cars">
-				<div class="content">
-					<img src="../img/libro18.png" alt="books" style="width:60%">
-					<h4>Libro</h4>
-					<h5>$650</h5>
-					<a href="/ProyectoWeb/php/libro.php" class="button">Comprar </a>
-				</div>
-			</div>
-			<div class="column cars">
-				<div class="content">
-					<img src="../img/libro18.png" alt="books" style="width:60%">
-					<h4>Libro</h4>
-					<h5>$650</h5>
-					<a href="/ProyectoWeb/php/libro.php" class="button">Comprar </a>
-				</div>
-			</div>
+
+
+	// GALERIA DE LIBROS
+
+function ImprimirLibros($NombreLibro,$FotoLibro,$PrecioLibro){
+
+	print <<< END
 		
+		<div class="column nature">
+			<div class="content">
+				<img src="../img/5.jpg" alt="books" style="width:60%">
+				<h4>$NombreLibro</h4>
+				<h5>$PrecioLibro</h5>
+				<a href="/ProyectoWeb/php/libro.php" class="button">Comprar </a>
+			</div>
 		</div>
+		
+	END;
 
-	</div>
-	<script language="javascript" type="text/javascript" src="/ProyectoWeb/js/extras.js"></script>
+}
 
+function MostrarLibros(){
 
+	include("conexion.php");
+	$conn = connectDB();
+	$sql = "SELECT * FROM libro";
+	$result = $conn->query($sql);
+	$i = 0;
+	$arrRow = []; //Arreglo de filas de la base de datos
+
+	if($result == TRUE){
+		$row = mysqli_fetch_assoc($result); 
+
+		while(isset($row)){ //Mientras haya filas las meto en un arreglo
+			$arrRow[$i] = $row;
+			$row = mysqli_fetch_assoc($result);
+			$i++;
+		}
+
+		mysqli_free_result($result); //Liberamos el resultado
+		$lenArrRow = count($arrRow) - 1; // Cantidad de filas
+	
+		while($lenArrRow >= 0){
+			$NombreLibro = $arrRow[$lenArrRow]['nombre'];
+			$PrecioLibro = $arrRow[$lenArrRow]['precio'];
+			$FotoLibro = $arrRow[$lenArrRow]['foto'];
+
+			ImprimirLibros($NombreLibro,$FotoLibro,$PrecioLibro);
+			$lenArrRow--;
+		}	
+	}
+}
+
+	print <<< END
 
 	<div class="deals">
-		
-        <h1>Ofertas</h1>
-    
+
+		<h1>Ofertas</h1>
+
 		<div class="contenedor-libros">
 
-			
-			<div class="container">
-				<img src="../img/libro3.png" alt="Avatar" class="image">
-				<div class="overlay">
-					<h3>Los Guardianes</h1>
-					<h4>Autor: Josh Grisham</h1>
-					<h4>$650</h1>
-					<br>
-					<a href="/ProyectoWeb/php/libro.php" class="botonn">Comprar </a>
-				</div>
-			</div>
-			
-
-			
-			<div class="container">
-					
-				<img src="../img/libro3.png" alt="Avatar" class="image">
-				<div class="overlay">
-					<h3>Los Guardianes</h1>
-					<h4>Autor: Josh Grisham</h1>
-					<h4>$650</h1>
-					<br>
-					<a href="/ProyectoWeb/php/libro.php" class="botonn">Comprar </a>
-				</div>
-			</div>
 
 			<div class="container">
 				<img src="../img/libro3.png" alt="Avatar" class="image">
 				<div class="overlay">
 					<h3>Los Guardianes</h1>
-					<h4>Autor: Josh Grisham</h1>
-					<h4>$650</h1>
-					<br>
-					<a href="/ProyectoWeb/php/libro.php" class="botonn">Comprar </a>
+						<h4>Autor: Josh Grisham</h1>
+							<h4>$650</h1>
+								<br>
+								<a href="/ProyectoWeb/php/libro.php" class="botonn">Comprar </a>
 				</div>
 			</div>
-			
 
-		
-			
 
-            
-			
-        </div>
+
+			<div class="container">
+
+				<img src="../img/libro3.png" alt="Avatar" class="image">
+				<div class="overlay">
+					<h3>Los Guardianes</h1>
+						<h4>Autor: Josh Grisham</h1>
+							<h4>$650</h1>
+								<br>
+								<a href="/ProyectoWeb/php/libro.php" class="botonn">Comprar </a>
+				</div>
+			</div>
+
+			<div class="container">
+				<img src="../img/libro3.png" alt="Avatar" class="image">
+				<div class="overlay">
+					<h3>Los Guardianes</h1>
+						<h4>Autor: Josh Grisham</h1>
+							<h4>$650</h1>
+								<br>
+								<a href="/ProyectoWeb/php/libro.php" class="botonn">Comprar </a>
+				</div>
+			</div>
+		</div>
 	</div>
 
 
@@ -204,11 +190,8 @@
 			<div class="single-card" style="background-image: url('../img/6.jpg');"></div>
 		</a>
 	</div>
-
-	<?php include("footer.php")?>
-
-	<!-- JavaScript -->
-
-</body>
-
-</html>
+	END;
+	
+	
+	include("footer.php");
+?>

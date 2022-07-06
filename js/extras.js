@@ -1,5 +1,5 @@
 /*PARTE DE MAS BUSCADOS Y BEST SELLERS*/
-filterSelection("all")
+
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("column");
@@ -42,3 +42,5 @@ for (var i = 0; i < botóns.length; i++) {
     this.className += " active";
   });
 }
+
+window.onload = filterSelection("all");
