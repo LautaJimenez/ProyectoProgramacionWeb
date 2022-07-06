@@ -90,7 +90,7 @@ function ImprimirLibros($NombreLibro,$FotoLibro,$PrecioLibro){
 			<div class="content">
 				<img src="../img/5.jpg" alt="books" style="width:60%">
 				<h4>$NombreLibro</h4>
-				<h5>$PrecioLibro</h5>
+				<h5>$ $PrecioLibro</h5>
 				<a href="/ProyectoWeb/php/libro.php" class="button">Comprar </a>
 			</div>
 		</div>
