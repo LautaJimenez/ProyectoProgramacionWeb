@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Psicologia</title>
-    <link rel="stylesheet" href="../css/categorias.css">
+    <link rel="stylesheet" href="../css/Categorias.css">
     <link rel="shortcut icon" href="../img/libros.png">
 </head>
 

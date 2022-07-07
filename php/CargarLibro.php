@@ -7,7 +7,7 @@
 	<title>tienda de ebooks</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
 	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-	<link rel="stylesheet" href="../css/CargarLibro.css">
+	<link rel="stylesheet" href="../css/cargarLibro.css">
 	<link rel="shortcut icon" href="../img/libros.png">
 
 </head>

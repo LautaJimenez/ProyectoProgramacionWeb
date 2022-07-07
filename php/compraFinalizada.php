@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compra finalizada</title>
     <link rel="shortcut icon" href="../img/libros.png">
-    <link rel="stylesheet" href="../css/compraFinalizada.css">
+    <link rel="stylesheet" href="../css/CompraFinalizada.css">
 
 </head>
 <body>

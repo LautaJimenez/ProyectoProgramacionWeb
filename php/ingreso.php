@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login |CódigoMasters|</title>
-    <link rel="stylesheet" href="../css/ingreso.css">
+    <link rel="stylesheet" href="../css/Ingreso.css">
     <link rel="shortcut icon" href="../img/libros.png">
 </head>
 
@@ -57,19 +57,6 @@
         </div>
     </div>
 
-    <!-- <script>
-    function Registro() {
-    var login = document.getElementById("formulario2");
-    var register = document.getElementById("formulario");
-    if (login.style.display === "none") {
-        login.style.display = "block";
-        register.style.display = "none";
-    } else {
-        login.style.display = "none";
-        register.style.display = "block";
-    }
-    }
-    </script> -->
     <?php include("footer.php")?>
 
 
