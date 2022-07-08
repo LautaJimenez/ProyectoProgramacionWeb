@@ -16,106 +16,139 @@
 <body>
 
 <?php include("header.php")?>
-	<br>
-	<br>
-	<div class="topleft">
-		<p>Home/Ficción</p>
+	
 
-	</div>
 
-	<!--detalles del producto-->
-	<div class="small-container single-product">
-		<div class="row">
-			<div class="col-2">
-				<img src="../img/libro5.png" width="100%">
+<?php
+	
+	include("conexion.php");
+	$conn = connectDB();
 
-			</div>
-			<div class="col-2">
-				<br>
-				<br>
-				<br>
-				<h1> El Duelo</h1>
-				<h4>Autor: Rolón, Gabriel</h4>
-				<h3>Editorial: Planeta</h3>
-				<h4>ARS$650.00</h4>
-				<h6>
-					Cantidad: <input type="number" value="0">
+	if (isset($_GET['id'])){
+		$IDLibro = $_GET['id'];
+		$sql = "SELECT * FROM libro WHERE id='".$IDLibro."'";
+		$result = mysqli_query($conn, $sql);
+	}
 
-				</h6>
-				<h4>ARS$650.00
-				</h4>
-				<a href="" class="btn">Comprar </a>
-				<br>
-				<p>La pérdida de un trabajo, una pareja, un hogar, el reconocimiento de un otro y hasta la juventud nos
-					empujan al duelo. Y es ahí, en ese soplo en el que el dolor se hace carne y la pena se devora las
-					palabras, que Gabriel Rolón comparte su reflexión aguda, certera, siempre lúcida. (...)</p>
-				<br>
-				<br>
-				<h3>Más Información</h3>
-				<br>
+	if(mysqli_num_rows($result) > 0){
+		while($row = mysqli_fetch_array($result)){
+			$IDLibro = $row['id'];
+			$EditorialLibro = $row['idEditorial'];
+			$NombreLibro = $row['nombre'];
+			$AutorLibro = $row['autor'];
+			$PrecioLibro = $row['precio'];
+			$FotoLibro = $row['foto'];    
+			$SinopsisLibro = $row['sinopsis'];
+			$ISBNLibro = $row['isbn'];
+			$PaginasLibro = $row['paginas'];
+			$IdiomaLibro = $row['idioma'];
+			$FechaPublicacionLibro = $row['fechaPublicacion'];
+		}
+	}
 
-				<h5>I.S.B.N: 9789504970934</h5>
-				<h5>Nro. de Paginas: 456</h5>
-				<h5>Idioma: ESPAÑOL</h5>
-				<h5>Fecha Publicación: 10/2020</h5>
+	print <<< END
+
+		<br>
+			<br>
+			<div class="topleft">
+				<p>Home/Ficción</p>
 
 			</div>
 
-		</div>
-	</div>
-	<br>
-	<br>
-	<div class="deals">
+			<!--detalles del producto-->
+			<div class="small-container single-product">
+				<div class="row">
+					<div class="col-2">
+						<img src="../img/$FotoLibro" width="100%">
 
-		<h1>Ofertas</h1>
+					</div>
+					<div class="col-2">
+						<br>
+						<br>
+						<br>
+						<h1>$NombreLibro</h1>
+						<h4>Autor: $AutorLibro</h4>
+						<h3>Editorial: $EditorialLibro</h3>
+						<h4>AR$ $PrecioLibro</h4>
+						<h6>
+							Cantidad: <input type="number" value="0">
 
-		<div class="contenedor-libros">
+						</h6>
+						<h4>AR$ $PrecioLibro 
+						</h4>
+						<a href="" class="btn">Comprar</a>
+						<br>
+						<p>$SinopsisLibro</p>
+						<br>
+						<br>
+						<h3>Más Información</h3>
+						<br>
 
+						<h5>I.S.B.N: $ISBNLibro</h5>
+						<h5>Nro. de Paginas: $PaginasLibro</h5>
+						<h5>Idioma: $IdiomaLibro</h5>
+						<h5>Fecha Publicación: $FechaPublicacionLibro</h5>
 
-			<div class="container">
-				<img src="../img/libro3.png" alt="Avatar" class="image">
-				<div class="overlay">
-					<h3>Los Guardianes</h1>
-						<h4>Autor: Josh Grisham</h1>
-							<h4>$650</h1>
-								<br>
-								<a href="/ProyectoWeb/php/libro.php" class="botonn">Comprar </a>
+					</div>
+
 				</div>
 			</div>
+			<br>
+			<br>
+			<div class="deals">
+
+				<h1>Ofertas</h1>
+
+				<div class="contenedor-libros">
+
+
+					<div class="container">
+						<img src="../img/libro3.png" alt="Avatar" class="image">
+						<div class="overlay">
+							<h3>Los Guardianes</h1>
+								<h4>Autor: Josh Grisham</h1>
+									<h4>$650</h1>
+										<br>
+										<a href="/ProyectoWeb/php/libro.php" class="botonn">Comprar </a>
+						</div>
+					</div>
 
 
 
-			<div class="container">
+					<div class="container">
 
-				<img src="../img/libro3.png" alt="Avatar" class="image">
-				<div class="overlay">
-					<h3>Los Guardianes</h1>
-						<h4>Autor: Josh Grisham</h1>
-							<h4>$650</h1>
-								<br>
-								<a href="/ProyectoWeb/php/libro.php" class="botonn">Comprar </a>
+						<img src="../img/libro3.png" alt="Avatar" class="image">
+						<div class="overlay">
+							<h3>Los Guardianes</h1>
+								<h4>Autor: Josh Grisham</h1>
+									<h4>$650</h1>
+										<br>
+										<a href="/ProyectoWeb/php/libro.php" class="botonn">Comprar </a>
+						</div>
+					</div>
+
+					<div class="container">
+						<img src="../img/libro3.png" alt="Avatar" class="image">
+						<div class="overlay">
+							<h3>Los Guardianes</h1>
+								<h4>Autor: Josh Grisham</h1>
+									<h4>$650</h1>
+										<br>
+										<a href="/ProyectoWeb/php/libro.php" class="botonn">Comprar </a>
+						</div>
+					</div>
+
 				</div>
 			</div>
+			<br>
+			<br>
 
-			<div class="container">
-				<img src="../img/libro3.png" alt="Avatar" class="image">
-				<div class="overlay">
-					<h3>Los Guardianes</h1>
-						<h4>Autor: Josh Grisham</h1>
-							<h4>$650</h1>
-								<br>
-								<a href="/ProyectoWeb/php/libro.php" class="botonn">Comprar </a>
-				</div>
-			</div>
 
-		</div>
-	</div>
-	<br>
-	<br>
 
-	<?php include("footer.php")?>
-	<!-- JavaScript -->
 
-</body>
+		</body>
 
-</html>
+		</html>
+	END;
+?>
+<?php include("footer.php")?>

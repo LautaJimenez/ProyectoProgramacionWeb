@@ -295,9 +295,6 @@ input:focus {
 	justify-content: space-evenly;
 	flex-wrap: wrap;
 	margin-top: 50px;
-
-
-
 }
 
 .libro {
@@ -408,7 +405,8 @@ h1 {
 /* Add padding BETWEEN each column */
 .col,
 .col>.column {
-	padding: 8px;
+	padding: 6px;
+	
 }
 
 /* Create three equal columns that floats next to each other */
