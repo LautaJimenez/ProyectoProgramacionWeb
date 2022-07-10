@@ -18,6 +18,7 @@
 body {
 	background: #f4f5f9;
 	padding: 0px;
+	margin: 0;
 }
 
 .single-item {
@@ -59,18 +60,18 @@ body {
 }
 
 .card-brand {
-	padding: 3rem;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 0rem 3rem;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0rem 5rem;
 }
 
 .single-card {
-	height: 300px;
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-	border-radius: 5px;
-	box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.3);
+    height: 400px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.3);
 }
 
 .menu-card a {

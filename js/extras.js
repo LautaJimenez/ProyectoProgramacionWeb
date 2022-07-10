@@ -42,6 +42,3 @@ for (var i = 0; i < botons.length; i++) {
     this.className += " active";
   });
 }
-
-window.onload = filterSelection("all");
-window.onload = filterSelection("MostWanted");

@@ -15,7 +15,9 @@
 
 <body>
 
-	<?php 
+	<?php
+
+	// Incluyo el header y abro la conexion en el header.
 
 	include("header.php");
 
@@ -70,7 +72,7 @@
 		<div class = "col">
 	END;
 	
-	MostrarLibros();
+	MostrarLibros($conn);
 	print <<< END
 		</div>	
 	</div> 
@@ -86,21 +88,18 @@ function ImprimirLibros($NombreLibro,$AutorLibro,$FotoLibro,$PrecioLibro,$IDLibr
 		
 		<div class="column nature">
 			<div class="content">
-				<img src="../img/$FotoLibro" alt="books"">
+				<img src="../img/$FotoLibro" alt="books">
 				<h4>$NombreLibro</h4>
 				<h5>$ $PrecioLibro</h5>
 				<a href="libro.php?id=$IDLibro"><input type="button" value="Comprar" class = "button"></a>
 			</div>
 		</div>
-		
-	END;
-	
+
+	END;	
 }
 
-function MostrarLibros(){
+function MostrarLibros($conn){
 
-	include("conexion.php");
-	$conn = connectDB();
 	$sql = "SELECT * FROM libro";
 	$result = $conn->query($sql);
 	$i = 0;
@@ -132,10 +131,8 @@ function MostrarLibros(){
 	}
 }
 
-function MostrarLibrosEnOferta(){
+function MostrarLibrosEnOferta($conn){
 
-
-	$conn = connectDB();
 	$sql = "SELECT * FROM libro";
 	$result = $conn->query($sql);
 	$i = 0;
@@ -198,7 +195,7 @@ print <<< END
 	<div class="deals">
 END;
 
-	MostrarLibrosEnOferta();
+	MostrarLibrosEnOferta($conn);
 
 print <<< END
 	</div>
@@ -226,6 +223,7 @@ END;
 <!-- Para que aparezca el slider de una. -->
 <script>
   showSlides(slideIndex);
+  window.onload = filterSelection("all");
 </script> 
 
 </body>

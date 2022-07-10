@@ -14,7 +14,7 @@ footer{
     padding: 60px 0 30px 0;
     margin: auto;
     overflow: hidden;
-    position: relative;
+    position:relative;
     left:0px; /*A la derecha deje un espacio de 0px*/
     right:0px; /*A la izquierda deje un espacio de 0px*/
     bottom:0px; /*Abajo deje un espacio de 0px*/
@@ -25,7 +25,7 @@ footer{
     width: 90%;
     justify-content: space-evenly;
     margin: auto;
-    padding: 50x;
+    padding-top: 3%;
 }
 
 .menu-card a{

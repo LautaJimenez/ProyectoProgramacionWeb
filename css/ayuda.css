@@ -15,9 +15,22 @@
     scroll-behavior: smooth;
 }
 
-body {
-	background: #f4f5f9;
+html, body {
+  margin: 0;
+  height: 100%;
 }
+
+body {
+  background: #f4f5f9;
+  display: table;
+  width: 100%;
+}
+
+body > footer {
+   display: table-row;
+   padding-top: 10%;
+}
+
 
 /* PREGUNTAS FRECUENTES */
 

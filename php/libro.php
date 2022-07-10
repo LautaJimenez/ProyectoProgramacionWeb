@@ -16,13 +16,8 @@
 <body>
 
 <?php include("header.php")?>
-	
-
 
 <?php
-	
-	include("conexion.php");
-	$conn = connectDB();
 
 	if (isset($_GET['id'])){
 		$IDLibro = $_GET['id'];
