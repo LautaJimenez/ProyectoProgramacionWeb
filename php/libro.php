@@ -43,6 +43,7 @@
 			$PaginasLibro = $row['paginas'];
 			$IdiomaLibro = $row['idioma'];
 			$FechaPublicacionLibro = $row['fechaPublicacion'];
+			$Categoria = $row['idcategoria'];
 		}
 	}
 
@@ -51,7 +52,7 @@
 		<br>
 			<br>
 			<div class="topleft">
-				<p>Home/Ficción</p>
+				<p>Home/$Categoria</p>
 
 			</div>
 
@@ -64,8 +65,6 @@
 					</div>
 					<div class="col-2">
 						<br>
-						<br>
-						<br>
 						<h1>$NombreLibro</h1>
 						<h4>Autor: $AutorLibro</h4>
 						<h3>Editorial: $EditorialLibro</h3>
@@ -76,7 +75,7 @@
 						</h6>
 						<h4>AR$ $PrecioLibro 
 						</h4>
-						<a href="" class="btn">Comprar</a>
+						<a href="/ProyectoWeb/php/carrito.php" class="btn">Comprar</a>
 						<br>
 						<p>$SinopsisLibro</p>
 						<br>

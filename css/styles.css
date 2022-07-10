@@ -103,7 +103,7 @@ body {
 
 .row {
 	display: flex;
-	align-items: center;
+	align-items:flex-start;
 	flex: wrap;
 	justify-content: space-around;
 }
@@ -175,13 +175,13 @@ input:focus {
 	outline: none;
 }
 
+/* Categorias en el archivo "libros.php" */
+
 .topleft {
-
-
 	left: 56px;
 	text-align: left;
 	font-size: 18px;
-	position: absolute;
+	position: relative;
 	top: 15%;
 	width: 90%;
 }
@@ -469,7 +469,7 @@ h1 {
 
 .boton:active {
 	background-color: #666;
-	/* color: white; */
+	color: white;
 }
 
 /* Estilos del boton "Comprar" */
