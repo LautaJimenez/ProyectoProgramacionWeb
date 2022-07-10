@@ -7,7 +7,7 @@
 
             <div class="buscador">
                 <input type="search" id="buscador" placeholder="Buscar... " />
-                <a type="submit" class="boton" href="/ProyectoWeb/php/busqueda.php"><img src="../img/lupa.png" alt=""></a>
+                <a type="submit" class="botonBusqueda" href="/ProyectoWeb/php/busqueda.php"><img src="../img/lupa.png" alt=""></a>
 
             </div>
 

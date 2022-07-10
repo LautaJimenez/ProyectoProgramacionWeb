@@ -33,10 +33,10 @@ function w3RemoveClass(element, name) {
 
 
 // Add active class to the current button (highlight it)
-var botónContainer = document.getElementById("mybotónContainer");
-var botóns = botónContainer.getElementsByClassName("botón");
-for (var i = 0; i < botóns.length; i++) {
-  botóns[i].addEventListener("click", function(){
+var botonContainer = document.getElementById("mybotonContainer");
+var botons = botonContainer.getElementsByClassName("boton");
+for (var i = 0; i < botons.length; i++) {
+  botons[i].addEventListener("click", function(){
     var current = document.getElementsByClassName("active");
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
@@ -44,3 +44,4 @@ for (var i = 0; i < botóns.length; i++) {
 }
 
 window.onload = filterSelection("all");
+window.onload = filterSelection("MostWanted");

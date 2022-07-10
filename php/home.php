@@ -60,8 +60,8 @@
 
 	<div id="mybotonContainer">
 		<button class="boton active" onclick="filterSelection('all')"> Mostrar todo</button>
-		<button class="boton" onclick="filterSelection('nature')"> Best Sellers</button>
-		<button class="boton" onclick="filterSelection('cars')"> Mas Buscados</button>
+		<button class="boton" onclick="filterSelection('BestSellers')"> Best Sellers</button>
+		<button class="boton" onclick="filterSelection('MostWanted')"> Mas Buscados</button>
 
 	</div>
 
@@ -86,7 +86,7 @@ function ImprimirLibros($NombreLibro,$AutorLibro,$FotoLibro,$PrecioLibro,$IDLibr
 		
 		<div class="column nature">
 			<div class="content">
-				<img src="../img/$FotoLibro" alt="books" style="width:60%">
+				<img src="../img/$FotoLibro" alt="books"">
 				<h4>$NombreLibro</h4>
 				<h5>$ $PrecioLibro</h5>
 				<a href="libro.php?id=$IDLibro"><input type="button" value="Comprar" class = "button"></a>
@@ -132,8 +132,6 @@ function MostrarLibros(){
 	}
 }
 
-MostrarLibrosEnOferta();
-
 function MostrarLibrosEnOferta(){
 
 
@@ -174,8 +172,7 @@ function ImprimirOfertas($NombreLibro,$AutorLibro,$FotoLibro,$PrecioLibro,$IDLib
 
 	if($Contador == 0){
 		print <<< END
-			<div class="deals">
-					<h1>Ofertas</h1>
+			<h1>Ofertas</h1>
 		END;
 	}
 
@@ -193,14 +190,20 @@ function ImprimirOfertas($NombreLibro,$AutorLibro,$FotoLibro,$PrecioLibro,$IDLib
 						</div>
 					</div>
 				</div>
-		END;
-
-	print <<< END
-		</div>
-	END;
-		
+		END;		
 	}
 }
+
+print <<< END
+	<div class="deals">
+END;
+
+	MostrarLibrosEnOferta();
+
+print <<< END
+	</div>
+END;
+
 
 	print <<< END
 
