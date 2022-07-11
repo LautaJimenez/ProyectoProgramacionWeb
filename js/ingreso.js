@@ -2,7 +2,7 @@
 function Registro() {
     var login = document.getElementById("formulario2");
     var register = document.getElementById("formulario");
-    if (login.style.display === "none") {
+    if (login.style.display === "none") {   
         login.style.display = "block";
         register.style.display = "none";
     } else {
@@ -100,4 +100,16 @@ else
 alert('Wrong...!')
 return false;
 }
+}
+
+function checkDNI(inputDNI){
+    var regex = /^[\d]{1,3}.?[\d]{3,3}.?[\d]{3,3}$/;
+    if(inputDNI.value.match(regex)){
+        alert('DNI Correcto!')
+        return true;
+    }
+    else{
+        alert('DNI Incorrecto!')
+        return false;
+    }
 }

@@ -46,11 +46,14 @@
 
                 <input type="text" placeholder="Apellido" name = "ApellidoUsuario" required>
 
-                <input type="email" placeholder="Correo Electrónico" name = "EmailUsuario" required>
+                <input type="email" placeholder="Correo Electrónico" name = "EmailUsuario" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' 
+                onkeyup="validateEmail(document.getElementById('Email-regist'))" value="" title="Debe ingresar un email valido." required>
 
-                <input type="number" placeholder="DNI" name = "DNIUsuario" required>
+                <input type="number" placeholder="DNI" name = "DNIUsuario" id = "DNI-regist" pattern='^[\d]{1,3}.?[\d]{3,3}.?[\d]{3,3}$' 
+                onsubmit="checkDNI(document.getElementById('DNI-regist'))" title="El DNI debe tener mas de 7 digitos y menos de 9 digitos." required>
 
-                <input type="password" placeholder="Contraseña" name = "ContraseñaUsuario" required>
+                <input type="password" placeholder="Contraseña" name = "ContraseñaUsuario" id="pass-regist" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    onsubmit="CheckPassword(document.getElementById('pass-regist'))" title="Debe contener minimo 6 caracteres, una mayuscula, una minuscula y un numero" required>
 
                 <input type="password" placeholder="Repetir Contraseña" name = "ContraseñaUsuario" required>
 
