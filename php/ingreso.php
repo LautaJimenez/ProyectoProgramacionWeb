@@ -40,14 +40,19 @@
 
         <div class="formulario2" id="formulario2">
             <h2>Registrarse</h2>
-            <form action="#">
-                <input type="text" placeholder="Nombre y Apellido" required>
+            <form action="ingreso.php" method = "post">
+                
+                <input type="text" placeholder="Nombre" name = "NombreUsuario" required>
 
-                <input type="email" placeholder="Correo Electrónico" required>
+                <input type="text" placeholder="Apellido" name = "ApellidoUsuario" required>
 
-                <input type="password" placeholder="Contraseña" required>
+                <input type="email" placeholder="Correo Electrónico" name = "EmailUsuario" required>
 
-                <input type="password" placeholder="Repetir Contraseña" required>
+                <input type="number" placeholder="DNI" name = "DNIUsuario" required>
+
+                <input type="password" placeholder="Contraseña" name = "ContraseñaUsuario" required>
+
+                <input type="password" placeholder="Repetir Contraseña" name = "ContraseñaUsuario" required>
 
                 <input type="submit" value="Registrarse">
             </form>
@@ -60,5 +65,29 @@
 </body>
 
 <?php include("footer.php")?>
+
+<?php 
+
+    // Registro de usuario.
+
+    if(!empty($_POST)){
+
+        $NombreUsuario = $_POST['NombreUsuario'];
+        $ApellidoUsuario = $_POST['ApellidoUsuario'];
+        $EmailUsuario = $_POST['EmailUsuario'];
+        $DNIUsuario = $_POST['DNIUsuario'];
+        $ContraseñaUsuario = $_POST['ContraseñaUsuario'];
+        
+        if(strpos($EmailUsuario,'@admin.com') !== false){
+            $TipoDeUsuario = 2; // ES ADMINISTRADOR
+        }
+        else{
+            $TipoDeUsuario = 1;
+        }
+
+        $query = "INSERT INTO usuario(nombre,apellido,email,dni,contraseña,tipoUsuario) VALUES ('$NombreUsuario','$ApellidoUsuario','$EmailUsuario','$DNIUsuario','$ContraseñaUsuario','$TipoDeUsuario')";
+        $result = mysqli_query($conn,$query);
+    }
+?>
 
 </html>

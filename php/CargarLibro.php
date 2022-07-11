@@ -126,10 +126,10 @@ function MostrarEditoriales(){
 
 </body>
 
-	<?php
+	<!-- <?php
 
-		$sql = "INSERT INTO * libro (id,nombre,autor,precio,idEditorial,paginas,idioma,bestseller,fechaPublicacion,sinopsis,isbn,idcategoria,foto) VALUES ('id','NombreLibro','NombreAutor','') 
+		$sql = "INSERT INTO * libro (id,nombre,autor,precio,idEditorial,paginas,idioma,bestseller,fechaPublicacion,sinopsis,isbn,idcategoria,foto) VALUES ('id','NombreLibro','NombreAutor','')";
 	
-	?>
+	?> -->
 
 </html>
