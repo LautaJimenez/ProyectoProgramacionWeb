@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autoayuda</title>
     <link rel="stylesheet" href="../css/Categorias.css">
     <link rel="shortcut icon" href="../img/libros.png">
 </head>
@@ -22,15 +21,15 @@
     END;
     ?>
     
-    
     <?php
     function MostrarLibrosPorCategoria($conn){
 
         if(isset($_GET['idCategoria'])){
 
             $idCategoria = $_GET['idCategoria'];
-            $sqlCategorias = "SELECT * FROM libro WHERE idCategoria='".$idCategoria."'";
-            $result = $conn->query($sqlCategorias);
+            $nombreCategoria = $_GET['nombreCategoria'];
+            $sqlLibros = "SELECT * FROM libro WHERE idCategoria='".$idCategoria."'";
+            $result = $conn->query($sqlLibros);
             $i = 0;
             $Contador = 0;
             $arrRow = [];
@@ -55,7 +54,7 @@
                     $IDLibro = $arrRow[$lenArrRow]['id'];
                     $Oferta = $arrRow[$lenArrRow]['Oferta'];
         
-                    ImprimirLibros($NombreLibro,$AutorLibro,$FotoLibro,$PrecioLibro,$IDLibro,$Contador);
+                    ImprimirLibros($NombreLibro,$AutorLibro,$FotoLibro,$PrecioLibro,$IDLibro,$nombreCategoria,$Contador);
                     $Contador++;
                     $lenArrRow--;
                 }	
@@ -65,35 +64,34 @@
 
     <?php
 
-    function ImprimirLibros($NombreLibro,$AutorLibro,$FotoLibro,$PrecioLibro,$IDLibro,$Contador){
+    function ImprimirLibros($NombreLibro,$AutorLibro,$FotoLibro,$PrecioLibro,$IDLibro,$nombreCategoria,$Contador){
         
         if($Contador == 0){
             print <<< END
             <div class="titulo">
-                <h1>Autoayuda</h1>
+                <h1>$nombreCategoria</h1>
             </div>
             END;
         }
 
         print <<< END
         
-        
-
-            <div class="contenedor-libros">
-                <div class="libro">
-                    <a href="/ProyectoWeb/php/libro.php?id=$IDLibro">
-                        <img src="../img/$FotoLibro" alt="">
-                        <div class="info">
-                            <h3>$NombreLibro</h3>
-                            <p>$AutorLibro</p>
-                            <div class="precio">
-                                <h4>$$PrecioLibro</h4>
-                            </div>
-                        </div>
-                    </a>
+        <div class="contenedor-libros">
+            <div class="libro">
+                <a href="/ProyectoWeb/php/libro.php?id=$IDLibro">
+                <img src="../img/$FotoLibro" alt="">
+                <div class="info">
+                    <h3>$NombreLibro</h3>
+                    <p>$AutorLibro</p>
+                    <div class="precio">
+                        <h4>$$PrecioLibro</h4>
+                    </div>
                 </div>
+                </a>
             </div>
+        </div>
         END;
+    
     }?>
     
 </body>

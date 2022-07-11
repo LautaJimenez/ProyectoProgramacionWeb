@@ -25,10 +25,9 @@
 
 	print <<< END
 
-	<!-- Slideshow container -->
+	<!-- Carrusel -->
 	<div class="slideshow-container">
 
-		<!-- Full-width images with number and caption text -->
 		<div class="mySlides fade">
 			<br>
 			<img src="../img/banner1.jpg" style="width:100%">
@@ -46,13 +45,13 @@
 
 		</div>
 
-		<!-- Next and previous buttons -->
+		<!-- Botones siguiente y previo -->
 		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 		<a class="next" onclick="plusSlides(1)">&#10095;</a>
 	</div>
 	<br>
 
-	<!-- The dots/circles -->
+	<!-- Botones circulares -->
 	<div style="text-align:center">
 		<span class="dot" onclick="currentSlide(1)"></span>
 		<span class="dot" onclick="currentSlide(2)"></span>
@@ -136,15 +135,9 @@ function MostrarLibros($conn){
 	print <<< END
 
 	<div class="card-brand">
-		<a href="/ProyectoWeb/php/libro.php">
-			<div class="single-card" style="background-image: url('../img/img7.jpg');"></div>
-		</a>
-		<a href="/ProyectoWeb/php/libro.php">
-			<div class="single-card" style="background-image: url('../img/5.jpg');"></div>
-		</a>
-		<a href="/ProyectoWeb/php/libro.php">
-			<div class="single-card" style="background-image: url('../img/6.jpg');"></div>
-		</a>
+		<div class="single-card" style="background-image: url('../img/img7.jpg');"></div>
+		<div class="single-card" style="background-image: url('../img/5.jpg');"></div>
+		<div class="single-card" style="background-image: url('../img/6.jpg');"></div>
 	</div>
 	END;
 	

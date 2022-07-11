@@ -7,7 +7,7 @@
 	<title>tienda de ebooks</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
 	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-	<link rel="stylesheet" href="../css/styles.css">
+	<link rel="stylesheet" href="../css/libro.css">
 	<link rel="shortcut icon" href="../img/libros.png">
 	<script language="javascript" type="text/javascript" src="/ProyectoWeb/js/funciones.js"></script>
 
@@ -16,6 +16,8 @@
 <body>
 
 <?php include("header.php");
+
+// Obtengo la informacion del libro.
 
 if (isset($_GET['id'])){
 	$IDLibro = $_GET['id'];
@@ -26,7 +28,7 @@ if (isset($_GET['id'])){
 if(mysqli_num_rows($result) > 0){
 	while($row = mysqli_fetch_array($result)){
 		$IDLibro = $row['id'];
-		$EditorialLibro = $row['idEditorial'];
+		$IDEditorialLibro = $row['idEditorial'];
 		$NombreLibro = $row['nombre'];
 		$AutorLibro = $row['autor'];
 		$PrecioLibro = $row['precio'];
@@ -36,16 +38,39 @@ if(mysqli_num_rows($result) > 0){
 		$PaginasLibro = $row['paginas'];
 		$IdiomaLibro = $row['idioma'];
 		$FechaPublicacionLibro = $row['fechaPublicacion'];
-		$Categoria = $row['idcategoria'];
+		$IDCategoria = $row['idcategoria'];
 	}
 }
+
+// Obtengo el nombre de la categoria.
+
+$sql = "SELECT * FROM categorias WHERE idcategoria='".$IDCategoria."'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result) > 0){
+	while($row = mysqli_fetch_array($result)){
+		$NombreCategoria = $row['nombre'];
+	}
+}
+
+// Obtengo el nombre de la editorial
+
+$sql = "SELECT * FROM editorial WHERE idEditorial='".$IDEditorialLibro."'";
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result) > 0){
+	while($row = mysqli_fetch_array($result)){
+		$NombreEditorial = $row['nombre'];
+	}
+}
+
 
 print <<< END
 
 	<br>
 	<br>
 	<div class="topleft">
-		<p>$Categoria</p>
+		<a href="/ProyectoWeb/php/librosPorCategoria.php?idCategoria=$IDCategoria&nombreCategoria=$NombreCategoria"><p class = "tituloCategoria">$NombreCategoria</p></a>
 	</div>
 
 	<div class="small-container single-product">
@@ -60,7 +85,7 @@ print <<< END
 				<br>
 				<h1>$NombreLibro</h1>
 				<h4>Autor: $AutorLibro</h4>
-				<h3>Editorial: $EditorialLibro</h3>
+				<h3>Editorial: $NombreEditorial</h3>
 				<h4>AR$ $PrecioLibro</h4>
 				<h6>Cantidad: <input type="number" value="0"></h6>
 				<h4>AR$ $PrecioLibro</h4>

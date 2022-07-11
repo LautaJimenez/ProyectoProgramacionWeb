@@ -22,7 +22,7 @@
 
         <div class="formulario" id="formulario">
             <h2>Iniciar Sesión</h2>
-            <form action="#">
+            <form method = "POST" action="#">
                 <!-- <input type="text" placeholder="Correo Electrónico" required> -->
                 <input type="text" id="email-login" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$'
                     onkeyup="validateEmail(document.getElementById('email-login'))" placeholder="Email" name="email"

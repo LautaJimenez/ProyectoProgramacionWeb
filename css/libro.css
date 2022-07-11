@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+@import url("../css/footer.css");
+@import url("../css/header.css");
+@import url("../css/ofertas.css");
+
+.small-container {
+	max-width: 900px;
+	margin: auto;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.row {
+	display: flex;
+	align-items:flex-start;
+	flex: wrap;
+	justify-content: space-around;
+}
+
+.col-2 {
+	flex-basis: 50%;
+	min-width: 100px;
+}
+
+.col-2 img {
+	max-width: 100%;
+	padding: 60px 0;
+}
+
+.col-2 h1 {
+	font-size: 50px;
+	line-height: 40px;
+	margin: 10px 10px;
+}
+
+.btn {
+	display: inline-block;
+	background: #22375e;
+	color: #fff;
+	padding: 8px 30px;
+	margin: 30px 0;
+	border-radius: 30px;
+	transition: background 0.5;
+}
+
+.btn:hover {
+	background: #6a6b6d;
+}
+
+.single-product .col-2 img {
+	padding: 0;
+	height: 700px;
+}
+
+.single-product .col-2 img {
+
+	left: 53.3438px;
+	top: 190px;
+	height: 500px;
+	width: 350px;
+}
+
+.single-product .col-2 {
+	padding: 0;
+}
+
+.single-product h4 {
+	padding: 20px 0;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.single-product input {
+	width: 50px;
+	height: 40px;
+	padding-left: 10px;
+	font-size: 20px;
+	margin-right: 10px;
+	border: 1px #090b24;
+
+}
+
+input:focus {
+	outline: none;
+}
+
+/* Categorias en el archivo "libros.php" */
+
+.topleft {
+	left: 56px;
+	text-align: left;
+	font-size: 18px;
+	position: relative;
+	top: 15%;
+	width: 90%;
+}
+
+.tituloCategoria{
+	color: grey;
+	text-decoration: none;
+}
+
+.tituloCategoria:hover{
+	color: grey;
+	text-decoration: none;
+	text-decoration: underline;
+}
