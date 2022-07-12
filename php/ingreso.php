@@ -12,12 +12,9 @@
 <body>
 <?php include("header.php")?>
 
-
-
-
     <div class="contenedor-form">
         <div class="toggle">
-            <span onclick="Registro()"> Registrarse</span>
+            <span id = "toggle" onclick="Registro()">Registrarse</span>
         </div>
 
         <div class="formulario" id="formulario">
@@ -55,8 +52,6 @@
                 <input type="password" placeholder="Contraseña" name = "ContraseñaUsuario" id="pass-regist" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                     onsubmit="CheckPassword(document.getElementById('pass-regist'))" title="Debe contener minimo 6 caracteres, una mayuscula, una minuscula y un numero" required>
 
-                <input type="password" placeholder="Repetir Contraseña" name = "ContraseñaUsuario" required>
-
                 <input type="submit" value="Registrarse">
             </form>
         </div>
@@ -80,6 +75,7 @@
         $EmailUsuario = $_POST['EmailUsuario'];
         $DNIUsuario = $_POST['DNIUsuario'];
         $ContraseñaUsuario = $_POST['ContraseñaUsuario'];
+        $ContraseñaUsuarioHashed = password_hash($ContraseñaUsuario,PASSWORD_DEFAULT); // Encriptacion la contraseña.
         
         if(strpos($EmailUsuario,'@admin.com') !== false){
             $TipoDeUsuario = 2; // ES ADMINISTRADOR
@@ -88,8 +84,25 @@
             $TipoDeUsuario = 1;
         }
 
-        $query = "INSERT INTO usuario(nombre,apellido,email,dni,contraseña,tipoUsuario) VALUES ('$NombreUsuario','$ApellidoUsuario','$EmailUsuario','$DNIUsuario','$ContraseñaUsuario','$TipoDeUsuario')";
+        $query = "INSERT INTO usuario(nombre,apellido,email,dni,contraseña,tipoUsuario) VALUES ('$NombreUsuario','$ApellidoUsuario','$EmailUsuario','$DNIUsuario','$ContraseñaUsuarioHashed','$TipoDeUsuario')";
         $result = mysqli_query($conn,$query);
+
+        if($result === TRUE){ // Si no hay error en el pedido, que te salte una alerta con registro exitoso.
+            print <<< END
+                <script type="text/javascript">
+                alert("Registro exitoso!");
+                </script>
+            END;
+            exit();
+        }
+        
+        else{
+            print <<< END
+            <script type="text/javascript">
+            alert("Registro fallido. Intente nuevamente");
+            </script>
+        END;
+        }
     }
 ?>
 

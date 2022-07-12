@@ -1,8 +1,11 @@
 
+// Codigo para el carrusel.
+
 var slideIndex = 1;
 showSlides(slideIndex);
 
-// Next/previous controls
+// Siguiente y retroceder: 
+
 function plusSlides(n) {
   showSlides(slideIndex += n);
 }
@@ -42,4 +45,20 @@ span[1].onclick =()=>{
         if(l>4){l=4;}
     }
 }
+
+function convertCurrency(Numero){ // Te convierte el precio con comas y puntos (en libro.php).
+    return (new Intl.NumberFormat('es-AR',{style:'currency',currency:'ARS'}).format(Numero));
+}
+
+function MultiplicarPrecios(PrecioLibros){ // Te multiplica el precio segun la cantidad de libros que selecciones (en libro.php).
+
+  CantidadDeLibros = parseInt(document.getElementById("CantidadDeLibros").value); // La cantidad de los libros debe ser enteros.
+  Multiplicacion = CantidadDeLibros*PrecioLibros;
+  
+  Respuesta = convertCurrency(Multiplicacion);
+  
+  document.getElementById("ResultadoPrecio").innerHTML = "AR" + Respuesta;
+}
+
+
 

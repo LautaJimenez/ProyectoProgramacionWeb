@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 	<link type="text/css" rel="stylesheet" href="../css/styles.css">
 	<link rel="shortcut icon" href="../img/libros.png">
-	<script language="javascript" type="text/javascript" src="/ProyectoWeb/js/extras.js"></script>
 	<script language="javascript" type="text/javascript" src="/ProyectoWeb/js/funciones.js"></script>
 </head>
 
@@ -48,7 +47,9 @@
 		<!-- Botones siguiente y previo -->
 		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	
 	</div>
+
 	<br>
 
 	<!-- Botones circulares -->
@@ -57,44 +58,37 @@
 		<span class="dot" onclick="currentSlide(2)"></span>
 		<span class="dot" onclick="currentSlide(3)"></span>
 	</div>
-
-
-	<div id="mybotonContainer">
-		<button class="boton active" onclick="filterSelection('all')"> Mostrar todo</button>
-		<button class="boton" onclick="filterSelection('BestSellers')"> Best Sellers</button>
-		<button class="boton" onclick="filterSelection('MostWanted')"> Mas Buscados</button>
-
-	</div>
-
 	
 	<div class="main">
+		<h1 class = "libros-en-venta-titulo">Libros en venta</h1>	
 		<div class = "col">
+		
 	END;
 	
 	MostrarLibros($conn);
+	
 	print <<< END
 		</div>	
 	</div> 
+	
 	END;
-
-
-
+	
 	// GALERIA DE LIBROS
 
 function ImprimirLibros($NombreLibro,$AutorLibro,$FotoLibro,$PrecioLibro,$IDLibro){
-
-	print <<< END
-		
+		print <<< END
+	
 		<div class="column nature">
 			<div class="content">
 				<a href="libro.php?id=$IDLibro"><img src="../img/$FotoLibro" alt="books"></a>
-				<h4>$NombreLibro</h4>
+				<div styles = ""><h4>$NombreLibro</h4></div>
 				<h5>$ $PrecioLibro</h5>
 				<a href="libro.php?id=$IDLibro"><input type="button" value="Comprar" class = "button"></a>
 			</div>
 		</div>
+	
+		END;	
 
-	END;	
 }
 
 function MostrarLibros($conn){
@@ -147,7 +141,6 @@ function MostrarLibros($conn){
 <!-- Para que aparezca el slider y los todos los libros apenas comienza a correr la pagina. -->
 <script>
   showSlides(slideIndex);
-  window.onload = filterSelection("all");
 </script> 
 
 </body>

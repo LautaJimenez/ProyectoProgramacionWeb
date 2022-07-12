@@ -48,6 +48,7 @@ html, body {
     flex-wrap: wrap;
     margin-top: 50px;
     float: left;
+    margin-left: 5%;
 }
 
 .libro{
@@ -64,8 +65,8 @@ html, body {
 }
 
 .libro img{
-	max-width: 170px;
-	max-height: 250px;
+	width: 170px;
+	height: 250px;
     object-fit: cover;
     display: block;
     border-radius: 5px;
@@ -75,12 +76,18 @@ html, body {
 .info{
     text-align: center;
     color: grey;
+
+    
 }
 
 .info h3{
     font-size: 12px;
     margin-top: 5px;
     margin-bottom: 5px;
+    width: 170px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .info p{

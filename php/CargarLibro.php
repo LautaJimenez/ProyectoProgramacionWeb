@@ -62,7 +62,7 @@ function MostrarEditoriales(){
 			<h1>Cargar un libro</h1>
 		</section>
 
-		<form action="CargarLibro.php" method = "post" id="formulario" onsubmit="return validar()">
+		<form action="CargarLibro.php" method = "POST" id="formulario" onsubmit="validar()">
 
 			<div class="CargarLibro">
 				<label for="libro">Nombre</label><input type="text" name = "NombreLibro" id="libro"
@@ -76,8 +76,6 @@ function MostrarEditoriales(){
 					<option value=""></option>
 					<?php MostrarCategorias(); ?>
 					</select>
-			
-				<label for="agregarAgregarCategoria"></label><input type="text" id="agregarCategoria" placeholder="Agregar categoria..." style="display: none;">
 				
 				<label for="libro" id = "titulo-editorial" style="display: block">Editorial</label>
 				
@@ -86,35 +84,30 @@ function MostrarEditoriales(){
 					<?php MostrarEditoriales(); ?>
 				</select>
 				
-				<label for="agregarEditorial"></label><input type="text" id="agregarEditorial" placeholder="Agregar editorial..." style="display: none;">
+				<label for="precio">Precio</label><input type="text" id="precio" name = "Precio" placeholder="Ingrese precio..."><br>
 				
-				<label for="precio">Precio</label><input type="text" id="precio" placeholder="Ingrese precio..."><br>
-				
-				<label for="paginas">Número de páginas</label><input type="text" id="paginas"
+				<label for="paginas">Número de páginas</label><input type="text" name = "Paginas" id="paginas"
 					placeholder="Ingrese cantidad de paginas..."><br>
 				
 				<label for="idioma" id = "titulo-idioma" style="display: block;">Idioma</label>
-					<select name="idioma" id="idioma" style="display: inline-block;">
+					<select name="Idioma" id="idioma" style="display: inline-block;">
 					<option value=""></option>
-					<option value="esp">Español</option>
-					<option value="ing">Ingles</option>
-					<option value="ale">Aleman</option>
+					<option value="Español">Español</option>
+					<option value="Ingles">Ingles</option>
+					<option value="Aleman">Aleman</option>
 					</select>
 				
-				<label for="AgregarIdioma"></label><input type="text" id="agregarIdioma" placeholder="Agregar idioma..." style="display: none;">
+				<label for="fecha">Fecha de publicación</label><input name = "Fecha" type="date" id="fecha"><br>
 				
-				<label for="bestseller">Best seller</label><input type="checkbox" name="" id="bestseller">
+				<label for="ISBN">I.S.B.N</label><input type="text" id="isbn" name = "ISBN" placeholder="Ingrese numero ISBN..."><br>
 				
-				<label for="fecha">Fecha de publicación</label><input type="date" id="fecha"><br>
-				
-				<label for="ISBN">I.S.B.N</label><input type="text" id="isbn" placeholder="Ingrese numero ISBN..."><br>
-				
-				<label for="sinopsis">Sinopsis</label><textarea name="sinopsis" id="sinopsis" cols="40" rows="10"
+				<label for="sinopsis">Sinopsis</label><textarea id="sinopsis" name = "Sinopsis" cols="40" rows="10"
 					placeholder="Ingrese sinopsis..."></textarea>
 				
-					<label for="">Portada</label><input type="file" name="portada" id="portada">
+				<label for="portada">Portada</label><input type="text" name = "PortadaLibro" id="PortadaLibro"
+				placeholder="Ingrese nombre del archivo de la portada..."><br>
 				
-					<input type="submit" value="Cargar libro" id="enviar">
+					<input type="submit" name = "CargarLibro" value="Cargar libro" id="enviar">
 			</div>
 		</form>
 	</main>
@@ -126,10 +119,46 @@ function MostrarEditoriales(){
 
 </body>
 
-	<!-- <?php
+	<?php
+		
+		if(isset($_POST["CargarLibro"])){
+			$NombreLibro = $_POST['NombreLibro'];
+			$AutorLibro = $_POST["AutorLibro"];
+			$CategoriaLibro = $_POST["categoria"];
+			$EditorialLibro = $_POST["editorial"];
+			$Precio = $_POST["Precio"];
+			$Paginas = $_POST["Paginas"];
+			$Idioma = $_POST["Idioma"];
+			$FechaPublicacion = $_POST["Fecha"];
+			$ISBNLibro = $_POST["ISBN"];
+			$SinopsisLibro = $_POST["Sinopsis"];
+			$FotoLibro = $_POST["PortadaLibro"];
 
-		$sql = "INSERT INTO * libro (id,nombre,autor,precio,idEditorial,paginas,idioma,bestseller,fechaPublicacion,sinopsis,isbn,idcategoria,foto) VALUES ('id','NombreLibro','NombreAutor','')";
+			$sql = "INSERT INTO libro
+					(nombre,autor,precio,idEditorial,paginas,idioma,fechaPublicacion,sinopsis,isbn,idcategoria,foto)
+					VALUES 
+					('$NombreLibro','$AutorLibro',$Precio,$EditorialLibro,$Paginas,'$Idioma','$FechaPublicacion','$SinopsisLibro',$ISBNLibro,$CategoriaLibro,'$FotoLibro')";
+
+			$result = $conn->query($sql);
+
+			if($result === TRUE){
+				print <<< END
+				<script type="text/javascript">
+				alert("Ingreso de libro exitoso!");
+				</script>
+				END;
+				exit();
+			}
 	
-	?> -->
+			else{
+				print <<< END
+				<script type="text/javascript">
+				alert("Ingreso de libro fallido. Intente nuevamente");
+				</script>
+			END;
+			}		
+		}
+		
+	?>
 
 </html>

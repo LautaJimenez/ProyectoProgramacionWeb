@@ -33,6 +33,13 @@
 	margin: 10px 10px;
 }
 
+.flex-conteiner{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
 .btn {
 	display: inline-block;
 	background: #22375e;

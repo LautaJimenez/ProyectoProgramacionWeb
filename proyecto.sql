@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-07-2022 a las 05:41:31
+-- Tiempo de generación: 12-07-2022 a las 01:55:29
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -45,20 +45,8 @@ INSERT INTO `categorias` (`idcategoria`, `nombre`) VALUES
 (7, 'Ficción y literatura'),
 (8, 'Psicología'),
 (9, 'Ciencia'),
-(10, 'Infantil y juvenil');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `compra`
---
-
-CREATE TABLE `compra` (
-  `id` int(11) NOT NULL,
-  `idLibro` int(11) NOT NULL,
-  `idUsuario` int(11) NOT NULL,
-  `fechaCompra` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+(10, 'Infantil y juvenil'),
+(11, 'Terror');
 
 -- --------------------------------------------------------
 
@@ -136,19 +124,14 @@ INSERT INTO `libro` (`id`, `nombre`, `autor`, `precio`, `idEditorial`, `paginas`
 (8, 'Largo Pétalo de mar', 'Isabel Allende', 3649, 13, 384, 'Español', 1, '2020-04-28', 'En plena Guerra Civil española, el joven médico Víctor Dalmau, junto a su amiga pianista Roser Bruguera, se ven obligados a abandonar Barcelona, exiliarse y cruzar los Pirineos rumbo a Francia. A bordo del Winnipeg, un navío fletado por el poeta Pablo Neruda que llevó a más de dos mil españoles rumbo a Valparaíso, embarcarán en busca de la paz y la libertad que no tuvieron en su país. Recibidos como héroes en Chile -ese «largo pétalo de mar y nieve», en palabras del poeta chileno-, se integrarán en la vida social del país durante varias décadas hasta el golpe de Estado que derrocó al doctor Salvador Allende, amigo de Victor por su común afición al ajedrez. Víctor y Roser se encontrarán nuevamente desarraigados, pero como dice la autora: «si uno vive lo suficiente, todos los círculos se cierran».\r\n\r\nUn viaje a través de la historia del siglo XX de la mano de unos personajes inolvidables que descubrirán que en una sola vida caben muchas vidas y que, a veces, lo difícil no es huir sino volver.', '9789500762823', 7, 'libro4.png', 1, 1),
 (9, 'Enigma de la habitación 622', 'Joel Dicker', 5849, 2, 624, 'Español', 1, '2019-07-16', 'Una noche de diciembre, un cadáver yace en el suelo de la habitación 622 del Palace de Verbier, un hotel de lujo en los Alpes suizos. La investigación policial no llegará nunca a término y el paso del tiempo hará que muchos olviden lo sucedido. Años más tarde, el escritor Jo «l Dicker llega a ese mismo hotel para recuperarse de una ruptura sentimental. No se imagina que terminará investigando el viejo crimen, y no lo hará solo: Scarlett, la bella huésped y aspirante a novelista de la habitación contigua, lo acompañará en la búsqueda mientras intenta aprender también las claves para escribir un buen libro. ¿Qué sucedió aquella noche en el Palace de Verbier? Es la gran pregunta de este thriller diabólico, construido con la precisión de un reloj suizo. Jo «l Dicker nos lleva finalmente a su país natal para narrarnos una investigación policial en la que se mezclan un triángulo amoroso, juegos de poder, traiciones y envidias en una Suiza no tan tranquila, donde la verdad es muy distinta a todo lo que hayamos imaginado. La crítica ha dicho... «Voluntad, secretos e intriga: el camino al éxito. El autor superventas lleva la trama de su nueva novela al ámbito financiero en Suiza y construye un thriller híbrido en el que juega con él mismo como personaje. Se pueden decir muchas cosas, y se han dicho, sobre Jo «l Dicker, pero no que no sepa lo que quiere, cómo conseguirlo y a quién se lo debe.» Juan Carlos Galindo, El País «Una vuelta de tuerca a la metaliteratura [...].', '9789877387278', 7, 'libro6.png', 1, 0),
 (10, 'El duelo', 'Gabriel Rolón', 3540, 1, 456, 'Español', 1, '2016-07-12', '“El Duelo es un territorio oscuro, misterioso, casi inaccesible. Una conmoción que nos sorprende, nos toma desprevenidos y cambia nuestro entorno en un instante. No importa lo preparados que creamos estar para enfrentar una pérdida, esa preparación jamás será suficiente. Cuando ocurre, todo se desmorona y por un tiempo nada tiene sentido. Algo se quiebra en nosotros, el mundo se derrumba y nos muestra su aspecto más cruel.”', '9789504970934', 8, 'libro5.png', 1, 0),
-(11, 'Los cuatro acuerdos', 'Miguel Ruiz', 2790, 3, 156, 'Español', 1, '2018-12-18', 'El conocimiento tolteca surge de la misma unidad esencial de la verdad de la que parten todas las tradiciones esotéricas sagradas del mundo.Aunque no es una religión,respeta a todos los maestros espirituales que han enseñado en la tierra,y si bien abraza el espíritu, resulta más preciso describirlo como una manera de vivir que se distingue por su fácil acceso a la felicidad y el amor.El doctor Miguel Ruiz nos propone en este libro un sencillo procedimiento para eliminar todas aquellas creencias heredadas que nos limitan y substituirlas por otras que responden a nuestra realidad interior y nos conducen a la libertad.', '9789507880223', 8, 'libro7.png', 1, 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `libroporcompra`
---
-
-CREATE TABLE `libroporcompra` (
-  `id` int(11) NOT NULL,
-  `idDelLibro` int(11) NOT NULL,
-  `idCompra` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+(11, 'Los cuatro acuerdos', 'Miguel Ruiz', 2790, 3, 156, 'Español', 1, '2018-12-18', 'El conocimiento tolteca surge de la misma unidad esencial de la verdad de la que parten todas las tradiciones esotéricas sagradas del mundo.Aunque no es una religión,respeta a todos los maestros espirituales que han enseñado en la tierra,y si bien abraza el espíritu, resulta más preciso describirlo como una manera de vivir que se distingue por su fácil acceso a la felicidad y el amor.El doctor Miguel Ruiz nos propone en este libro un sencillo procedimiento para eliminar todas aquellas creencias heredadas que nos limitan y substituirlas por otras que responden a nuestra realidad interior y nos conducen a la libertad.', '9789507880223', 8, 'libro7.png', 1, 0),
+(12, 'El Caso Alaska Sanders', 'Joel Dicker ', 4999, 2, 592, 'Español', 2, '2022-06-01', '«Sé lo que has hecho». Este mensaje, encontrado en el bolsillo del pantalón de Alaska Sanders, cuyo cadáver apareció el 3 de abril de 1999 al borde del lago de Mount Pleasant, una pequeña localidad de New Hampshire, es la clave de la nueva y apasionante investigación que, once años después de poner entre rejas a sus presuntos culpables, vuelve a reunir al escritor Marcus Goldman y al sargento Perry Gahalowood. En esta ocasión contarán con la inestimable ayuda de una joven agente de policía, Lauren Donovan, empeñada en resolver la trama de secretos que se esconde tras el caso. A medida que vayan descubriendo quién era realmente Alaska Sanders, irán resurgiendo también los fantasmas del pasado y, entre ellos, especialmente el de Harry Quebert. La crítica dijo... «Una voz napoleónica que no escribe, boxea». Laura Fernández, El Cultural «Imposible parar de leer. [...] Caemos rendidos ante una aventura emocionante e impredecible». Le Parisien «Un tsunami de giros y pistas, un Himalaya de suspenso, un Everest de emociones». RTL «Exuberante, astuta y virtuosa». Pierre Vavasseur, Le Parisien «Una novela maravillosa que vuelve a sumergirnos en el universo de Harry Quebert. Una narración minuciosa y una atmósfera única». La Fringale Culturelle «Suspenso en cada línea: se lee de una sentada». Gilles Medioni, Marie France «Dicker domina a la perfección el arte del suspenso. [...] Con un estilo sencillo, eficaz y una narración impecable, te mantiene hechizado. ¡Se avecina un nuevo éxito!». A. M., Version Femina', '9789877389326', 1, 'libro1.jpg', 0, 0),
+(13, 'El Libro de los Baltimore', 'Joel Dicker', 3599, 20, 480, 'Español', 1, '2021-09-01', '«Si encontráis este libro; por favor; leedlo. Querría que alguien supiera la historia de los Goldman de Baltimore.» Hasta que tuvo lugar el drama existían dos ramas de la familia Goldman: los Goldman de Baltimore y los Goldman de Montclair. Los Montclair; de los que forma parte Marcus Goldman; autor de La verdad sobre el caso Harry Quebert; es una familia de clase media que vive en una pequeña casa en el estado de Nueva Jersey. Los Baltimore; prósperos y a los que la suerte siempre ha sonreído; habitan una lujosa mansión en un barrio de la alta sociedad de Baltimore. Ocho años después del drama; Marcus Goldman pone el pasado bajo la lupa en busca de la verdad sobre el ocaso de la familia. Entre los recuerdos de su juventud revive la fascinación que sintió desde niño por los Baltimore; que encarnaban la América patricia con sus vacaciones en Miami y en los Hamptons y sus colegios elitistas. Con el paso de los años la brillante pátina de los Baltimore se desvanece al tiempo que el Drama se va perfilando. Hasta el día en el que todo cambia para siempre. La opinión de la crítica: «Les sorprenderá. Deberíamos leer El libro de los Baltimore como quien contempla un óleo de Edward Hopper y su trazo elegante.» Ramón Ventura; El Periódico de Catalunya «En apenas unas semanas El Libro de los Baltimore ha alcanzado los primeros puestos en las listas de más vendidos y nosotros sabemos por qué. Buscamos cada minuto libre en nuestro día a día -en el metro; en el autobús; en una cola- para sumergirnos en su lectura.» Toutelaculture.com «Con La verdad sobre el caso Harry Quebert obtuvo dos de los principales galardones galos; el Grand Prix du Roman de l\'Académie Française y el Goncourt des Lycéens; y se convirtió en uno de los principales fenómenos de ventas europeos de la década. Ahora; con El Libro de los Baltimore; ha logrado recuperar todos y cada uno de los ingredientes de la obra anterior (comenzando por su narrador; el escritor Marcus Goldman).» Milo J. Krmpotic; Librújula', '9789877254617', 1, 'foto13.jpg', 0, 0),
+(14, 'Gaturro 37', 'Nik', 1195, 2, 96, 'Español', 1, '2022-06-01', 'Nuevas aventuras de Gaturro y sus amigos!', '9789505158867', 2, 'foto14.jpg', 0, 0),
+(15, 'La Vaca se Empaca', 'Agustina Lynch', 2100, 9, 38, 'Español', 1, '2020-11-04', '', '9789878661735', 2, 'foto15.jpg', 0, 0),
+(16, 'Una (Muy) Breve Historia de la Vida en la Tierra', 'Henry Gee', 1990, 2, 256, 'Español', 2, '2022-06-06', 'El autor consigue explicar en forma entretenida y entendible el complicado proceso de transformación de nuestro planeta desde una bola de gases perdidos en el Universo hasta nuestros días. Un libro ideal para que todo el mundo pueda conocer y entender cómo se ha formado el mundo y cómo se ha desarrollado la vida. Según Jared Diamond; es el mejor libro disponible sobre la evolución de la vida en la Tierra. El Dr. Henry Gee nació en 1962. Se formó en las universidades de Leeds y Cambridge. Durante más de tres décadas ha sido redactor y editor de la revista científica internacional Nature. Ha escrito varios libros de divulgación científica aclamados por crítica y público.', '9789874616593', 9, 'foto16.jpg', 0, 0),
+(17, 'Ser Humanos ', 'Facundo Manes', 3660, 1, 560, 'Español', 2, '2021-06-01', 'Estamos frente a una revolución como nunca antes había sucedido; un cambio profundo que no solo transforma lo que hacemos sino también lo que somos. Hoy resulta esencial reconocer qué es aquello que nos hace humanos; cuáles son los lazos que nos sostienen como especie y nos alejan de nuestras zonas oscuras; individualistas; menos gregarias. En este contexto; el nuevo libro de Facundo Manes y Mateo Niro se vuelve tan vital como indispensable. Porque la capacidad de pensar de manera crítica; de observar y reflexionar; de poder tomar decisiones que tengan en cuenta sus consecuencias a corto y a largo plazo serán habilidades imprescindibles; tanto como la posibilidad de adaptar nuestra conducta a escenarios cambiantes en un mundo que tal vez no vuelva a ser el mismo. Empatía; inteligencia colectiva; resiliencia; cooperación; solidaridad; propósito; bienestar; emoción; creatividad; autorregulación; inteligencia emocional; compasión. Herramientas sociales y emocionales que Ser humanos pone a nuestro alcance de manera lúcida; clara; precisa. Un cuaderno de bitácora necesario para entender el camino hasta acá y un mapa para encarar el gran desafío colectivo del siglo XXI: comprendernos; fortalecernos y ser; cada día; más y mejores humanos.', '9789504973034', 9, 'foto17.jpg', 0, 0),
+(18, 'El Poder del Ahora ', 'Eckhart Tolle', 3549, 17, 256, 'Español', 1, '2012-10-01', 'El poder del ahora es un libro único. Tiene la capacidad de crear una experiencia en los lectores y de cambiar su vida. Hoy ya es considerado una obra maestra. Su autor; Eckhart Tolle; se convirtió en un maestro universal; un gran espíritu con un mensaje revelador: se puede alcanzar un estado de iluminación aquí y ahora. Es posible vivir libre del sufrimiento; la ansiedad y la neurosis. Para lograrlo sólo tenemos que comprender nuestro papel de creadores del propio dolor. Es la mente la que nos causa los problemas con su corriente de pensamientos constante sobre el pasado; preocupándose por el futuro. Cometemos el error de identificarnos con ella; de pensar que eso es lo que somos; cuando de hecho somos seres mucho más grandes. Escrito en un formato de preguntas y respuestas que lo hace muy accesible; este libro es una invitación a la reflexión; que abrirá las puertas a la plenitud espiritual y permitirá ver la vida con nuevos ojos y empezar a disfrutar del verdadero poder del ahora.', '9789502805924', 4, 'foto18.jpg', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -196,14 +179,6 @@ ALTER TABLE `categorias`
   ADD PRIMARY KEY (`idcategoria`);
 
 --
--- Indices de la tabla `compra`
---
-ALTER TABLE `compra`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `idLibro` (`idLibro`),
-  ADD UNIQUE KEY `idUsuario` (`idUsuario`);
-
---
 -- Indices de la tabla `editorial`
 --
 ALTER TABLE `editorial`
@@ -217,15 +192,6 @@ ALTER TABLE `libro`
   ADD UNIQUE KEY `isbn` (`isbn`),
   ADD KEY `fk_editorial` (`idEditorial`),
   ADD KEY `fk_categoria` (`idcategoria`);
-
---
--- Indices de la tabla `libroporcompra`
---
-ALTER TABLE `libroporcompra`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `idDelLibro` (`idDelLibro`),
-  ADD UNIQUE KEY `idCompra` (`idCompra`),
-  ADD KEY `libro_fk` (`idDelLibro`);
 
 --
 -- Indices de la tabla `tipodeusuario`
@@ -247,12 +213,6 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de la tabla `compra`
---
-ALTER TABLE `compra`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `editorial`
 --
 ALTER TABLE `editorial`
@@ -265,21 +225,14 @@ ALTER TABLE `libro`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
--- AUTO_INCREMENT de la tabla `libroporcompra`
+-- AUTO_INCREMENT de la tabla `usuario`
 --
-ALTER TABLE `libroporcompra`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `compra`
---
-ALTER TABLE `compra`
-  ADD CONSTRAINT `fk_libro` FOREIGN KEY (`idLibro`) REFERENCES `libro` (`id`),
-  ADD CONSTRAINT `fk_usuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`id`);
 
 --
 -- Filtros para la tabla `libro`
@@ -287,13 +240,6 @@ ALTER TABLE `compra`
 ALTER TABLE `libro`
   ADD CONSTRAINT `fk_categoria` FOREIGN KEY (`idcategoria`) REFERENCES `categorias` (`idcategoria`),
   ADD CONSTRAINT `fk_editorial` FOREIGN KEY (`idEditorial`) REFERENCES `editorial` (`idEditorial`);
-
---
--- Filtros para la tabla `libroporcompra`
---
-ALTER TABLE `libroporcompra`
-  ADD CONSTRAINT `compra_fk` FOREIGN KEY (`idCompra`) REFERENCES `compra` (`id`),
-  ADD CONSTRAINT `libro_fk` FOREIGN KEY (`idDelLibro`) REFERENCES `libro` (`id`);
 
 --
 -- Filtros para la tabla `usuario`

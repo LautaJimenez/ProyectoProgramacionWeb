@@ -32,6 +32,7 @@ if(mysqli_num_rows($result) > 0){
 		$NombreLibro = $row['nombre'];
 		$AutorLibro = $row['autor'];
 		$PrecioLibro = $row['precio'];
+		$PrecioLibroFormateado = number_format($PrecioLibro,2); // Para que aparezca el precio del libro con puntos y comas desde un principio.
 		$FotoLibro = $row['foto'];    
 		$SinopsisLibro = $row['sinopsis'];
 		$ISBNLibro = $row['isbn'];
@@ -86,9 +87,10 @@ print <<< END
 				<h1>$NombreLibro</h1>
 				<h4>Autor: $AutorLibro</h4>
 				<h3>Editorial: $NombreEditorial</h3>
-				<h4>AR$ $PrecioLibro</h4>
-				<h6>Cantidad: <input type="number" value="0"></h6>
-				<h4>AR$ $PrecioLibro</h4>
+				<div class = "flex-conteiner">
+				<div><h6>Cantidad: <input id = "CantidadDeLibros" type="number" min = "1" value = "1" onchange = "MultiplicarPrecios($PrecioLibro)"></h6></div>
+				<div><h4 id = "ResultadoPrecio">AR$ $PrecioLibroFormateado</h4></div>
+				</div>
 				<a href="/ProyectoWeb/php/carrito.php" class="btn">Comprar</a>
 				<br>
 				<p>$SinopsisLibro</p>
@@ -116,8 +118,11 @@ print <<< END
 <br>
 <br>
 </body>
+
 </html>
 
 END;
 
 include("footer.php")?>
+
+<!-- <h4 id = "PrecioLibro">Precio unidad: AR$ $PrecioLibro</h4> -->

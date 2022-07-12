@@ -2,12 +2,16 @@
 function Registro() {
     var login = document.getElementById("formulario2");
     var register = document.getElementById("formulario");
+    var toggle = document.getElementById("toggle");
+
     if (login.style.display === "none") {   
         login.style.display = "block";
         register.style.display = "none";
+        toggle.innerHTML = "Iniciar sesión";
     } else {
         login.style.display = "none";
         register.style.display = "block";
+        toggle.innerHTML = "Registrarse";
     }
 }
 
