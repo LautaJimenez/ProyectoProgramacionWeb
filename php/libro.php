@@ -91,7 +91,25 @@ print <<< END
 				<div><h6>Cantidad: <input id = "CantidadDeLibros" type="number" min = "1" value = "1" onchange = "MultiplicarPrecios($PrecioLibro)"></h6></div>
 				<div><h4 id = "ResultadoPrecio">AR$ $PrecioLibroFormateado</h4></div>
 				</div>
-				<a href="/ProyectoWeb/php/carrito.php" class="btn">Comprar</a>
+END;
+
+
+				if(checkAdmin()){
+					print <<< END
+						<div>
+						<form method="POST" action="BorrarLibro.php?IDLibro=$IDLibro">
+						<input type="submit" style = "width:100%" id = "BorrarLibro" name="BorrarLibro" style="margin:10px 0;"value="Borrar producto de base de datos">
+						</form>
+						</div>
+					END;
+				}
+				else{
+					print <<< END
+					<a href="/ProyectoWeb/php/carrito.php" class="btn">Comprar</a>
+					END;
+				}
+				
+				print <<< END
 				<br>
 				<p>$SinopsisLibro</p>
 				<br>
@@ -124,5 +142,3 @@ print <<< END
 END;
 
 include("footer.php")?>
-
-<!-- <h4 id = "PrecioLibro">Precio unidad: AR$ $PrecioLibro</h4> -->

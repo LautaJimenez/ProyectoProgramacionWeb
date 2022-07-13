@@ -3,6 +3,17 @@
     // Conexion a la base de datos:
     include("conexion.php");
     $conn = connectDB();   
+
+    session_start(); //Creamos la sesión o continua la ya creada basada en un identificador pasado por POST o GET o via coookie
+
+    function checkAdmin(){ // Funcion que chequea si el usuario logeado es administrador
+        if(isset($_SESSION['tipoUsuario'])){
+            if($_SESSION['tipoUsuario'] == 2){
+                return true;
+            }
+        }
+    }
+
 ?>
 
 <header>
@@ -25,9 +36,15 @@
 
 
         <ul class="navegacion">
-            <li><a href="#Categorias">Categorias</a><span>🡣</span>
+
+            <?php if(checkAdmin()){
+                print <<< END
+                <li><a href="/ProyectoWeb/php/CargarLibro.php">Agregar libro</a></li>
+                END;   
+            }?>    
+
+            <li><a href="#Categorias">Categorias 🡣</a>
                 <ul class="menu-categorias">
-            
                 <?php // Se obtiene de la base de datos y se imprimen todas las categorias.       
                 $sql_categorias = $conn->query("SELECT * FROM categorias");
                 while($row = $sql_categorias->fetch_array()){
@@ -44,7 +61,21 @@
 
             <li><a href="/ProyectoWeb/php/ayuda.php">Ayuda</a></li>
             <li><a href="#Contacto">Contacto</a></li>
-            <li><a href="/ProyectoWeb/php/ingreso.php">Ingresar</a></li>
+            
+            <?php
+                if(empty($_SESSION['id'])){
+                    print <<< END
+                        <li><a href="/ProyectoWeb/php/ingreso.php">Ingresar</a></li>
+                    END;
+                }
+                else{
+                    print <<< END
+                    <li><form id = "cerrarSesion" action="logout.php" method="POST"><button style = "background-color:#22375e; color:white; border:none; cursor: pointer;">Cerrar sesión</button></form></li>
+                    END;
+                }
+            ?>
+
         </ul>
         </section>
 </header>
+

@@ -20,8 +20,48 @@
 
 	include("header.php");
 
+	if(isset($_GET["login"])){ // si el boton de logueo esta seteado
+		if($_GET["login"] == "success"){ //si el logueo es exitoso
+			print <<< END
+				<script type="text/javascript">
+					setTimeout(function(){				// Set 250ms timeout till execute next line
+						alert("¡Logueo exitoso!");
+					},250);
+				</script>
+				
+			END;
+		}
+	}
+
+	if(isset($_GET["login"])){ // si el boton de logueo esta seteado
+		if($_GET["login"] == "success"){ //si el logueo es exitoso
+			print <<< END
+				<script type="text/javascript">
+					setTimeout(function(){				// Set 250ms timeout till execute next line
+						alert("¡Logueo exitoso!");
+					},250);
+				</script>
+				
+			END;
+		}
+	}
+
+	if(isset($_GET["BorrarLibro"])){ // Si el boton de borrar libro esta seteado
+		if($_GET["BorrarLibro"] == "success"){ // Si se borra el libro exitosamente.
+			print <<< END
+				<script type="text/javascript">
+					setTimeout(function(){				// Set 250ms timeout till execute next line
+						alert("¡Eliminacion de libro exitosa!");
+					},250);
+				</script>
+				
+			END;
+		}
+	}
+
 	// CARRUSEL
 
+	
 	print <<< END
 
 	<!-- Carrusel -->
@@ -134,8 +174,6 @@ function MostrarLibros($conn){
 		<div class="single-card" style="background-image: url('../img/6.jpg');"></div>
 	</div>
 	END;
-	
-	
 ?>
 
 <!-- Para que aparezca el slider y los todos los libros apenas comienza a correr la pagina. -->

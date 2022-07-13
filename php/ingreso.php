@@ -4,40 +4,75 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Login |CódigoMasters|</title>
+    <title>Login</title>
     <link rel="stylesheet" href="../css/Ingreso.css">
     <link rel="shortcut icon" href="../img/libros.png">
 </head>
 
 <body>
 <?php include("header.php")?>
+<?php
+    
+    if(isset($_GET["login"])){ // si el boton de logueo esta seteado
+            if($_GET["login"] == "failed"){ //si el logueo es exitoso
+                print <<< END
+                    <script type="text/javascript">
+                        setTimeout(function(){				// Set 250ms timeout till execute next line
+                            alert("¡Contraseña incorrecta! Intente nuevamente.");
+                        },250);
+                    </script>
+                    
+                END;
+            }
+        }
+
+    if(isset($_GET["register"])){ // si el boton de registro esta seteado
+            if($_GET["register"] == "success"){ //si el registro es exitoso
+                print <<< END
+                    <script type="text/javascript">
+                        setTimeout(function(){				// Set 250ms timeout till execute next line
+                            alert("¡Registro exitoso!");
+                        },250);
+                    </script>
+                    
+                END;
+            }
+        }
+?>
+
+
 
     <div class="contenedor-form">
         <div class="toggle">
             <span id = "toggle" onclick="Registro()">Registrarse</span>
         </div>
 
+        <!-- Formulario de incio de sesión de usuario. -->
+ 
         <div class="formulario" id="formulario">
             <h2>Iniciar Sesión</h2>
-            <form method = "POST" action="#">
-                <!-- <input type="text" placeholder="Correo Electrónico" required> -->
-                <input type="text" id="email-login" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$'
-                    onkeyup="validateEmail(document.getElementById('email-login'))" placeholder="Email" name="email"
-                    value="" title="Debe ingresar un email valido." required>
+            <form action="login.php" method="post">
+                
+                <input type="text" name = "EmailUsuarioLogin" id="email-login" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$'
+                    onkeyup="validateEmail(document.getElementById('email-login'))" placeholder="Email" name="email" value=""
+                    title="Debe ingresar un email valido." required>
                 <span class="is-valid"></span>
-                <!-- <input type="password" placeholder="Contraseña" required> -->
-                <input type="password" id="pass-login" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                    onsubmit="CheckPassword(document.getElementById('pass-login'))" placeholder="Contraseña"
-                    name="password" value=""
-                    title="Debe contener minimo 6 caracteres, una mayuscula, una minuscula y un numero" required>
+                
+                <input type="password" name = "ContraseñaUsuarioLogin" id="pass-login" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    onsubmit="CheckPassword(document.getElementById('pass-login'))" placeholder="Contraseña" name="password"
+                    value="" title="Debe contener minimo 6 caracteres, una mayuscula, una minuscula y un numero" required>
                 <span class="is-valid"></span>
-                <input type="submit" value="Iniciar Sesión">
+                
+                <input type="submit" name = "login" value="Iniciar Sesión">
+            
             </form>
         </div>
 
+        <!-- Formulario de registro de usuario. -->
+
         <div class="formulario2" id="formulario2">
             <h2>Registrarse</h2>
-            <form action="ingreso.php" method = "post">
+            <form action="register.php" method = "post">
                 
                 <input type="text" placeholder="Nombre" name = "NombreUsuario" required>
 
@@ -52,7 +87,7 @@
                 <input type="password" placeholder="Contraseña" name = "ContraseñaUsuario" id="pass-regist" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                     onsubmit="CheckPassword(document.getElementById('pass-regist'))" title="Debe contener minimo 6 caracteres, una mayuscula, una minuscula y un numero" required>
 
-                <input type="submit" value="Registrarse">
+                <input type="submit" name = "register" value="Registrarse">
             </form>
         </div>
         <div class="reset-password">
@@ -63,47 +98,5 @@
 </body>
 
 <?php include("footer.php")?>
-
-<?php 
-
-    // Registro de usuario.
-
-    if(!empty($_POST)){
-
-        $NombreUsuario = $_POST['NombreUsuario'];
-        $ApellidoUsuario = $_POST['ApellidoUsuario'];
-        $EmailUsuario = $_POST['EmailUsuario'];
-        $DNIUsuario = $_POST['DNIUsuario'];
-        $ContraseñaUsuario = $_POST['ContraseñaUsuario'];
-        $ContraseñaUsuarioHashed = password_hash($ContraseñaUsuario,PASSWORD_DEFAULT); // Encriptacion la contraseña.
-        
-        if(strpos($EmailUsuario,'@admin.com') !== false){
-            $TipoDeUsuario = 2; // ES ADMINISTRADOR
-        }
-        else{
-            $TipoDeUsuario = 1;
-        }
-
-        $query = "INSERT INTO usuario(nombre,apellido,email,dni,contraseña,tipoUsuario) VALUES ('$NombreUsuario','$ApellidoUsuario','$EmailUsuario','$DNIUsuario','$ContraseñaUsuarioHashed','$TipoDeUsuario')";
-        $result = mysqli_query($conn,$query);
-
-        if($result === TRUE){ // Si no hay error en el pedido, que te salte una alerta con registro exitoso.
-            print <<< END
-                <script type="text/javascript">
-                alert("Registro exitoso!");
-                </script>
-            END;
-            exit();
-        }
-        
-        else{
-            print <<< END
-            <script type="text/javascript">
-            alert("Registro fallido. Intente nuevamente");
-            </script>
-        END;
-        }
-    }
-?>
 
 </html>

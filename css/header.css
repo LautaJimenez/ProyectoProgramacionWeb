@@ -74,9 +74,6 @@ header {
 	
 }
 
-.navegacion li{
-	padding-right: 15px;
-}
 
 .menu-categorias{
 	padding-top: 16px;
@@ -91,7 +88,8 @@ header {
 	float: left;
 }
 
-.navegacion li a{
+.navegacion li a {
+	padding-right: 15px;
 	color: white;
 	margin: 5px;
 	text-decoration: none;
@@ -123,6 +121,7 @@ header {
 .navegacion li ul li:hover{
 	background-color: #22375e;
 }
+
 
 /* CARRITO */
 

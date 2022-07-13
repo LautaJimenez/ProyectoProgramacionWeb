@@ -4,7 +4,7 @@ function Registro() {
     var register = document.getElementById("formulario");
     var toggle = document.getElementById("toggle");
 
-    if (login.style.display === "none") {   
+    if (!login.style.display || login.style.display == "none") {   
         login.style.display = "block";
         register.style.display = "none";
         toggle.innerHTML = "Iniciar sesión";

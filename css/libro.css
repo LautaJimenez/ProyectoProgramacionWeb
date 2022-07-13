@@ -87,6 +87,10 @@
 
 }
 
+.BorrarLibro{
+	width: fit-content;
+}
+
 input:focus {
 	outline: none;
 }

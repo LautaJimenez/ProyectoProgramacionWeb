@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-07-2022 a las 00:19:26
+-- Tiempo de generación: 13-07-2022 a las 23:38:26
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -165,9 +165,19 @@ CREATE TABLE `usuario` (
   `apellido` varchar(30) NOT NULL,
   `email` varchar(320) NOT NULL,
   `dni` int(8) NOT NULL,
-  `contraseña` varchar(30) NOT NULL,
+  `contraseña` varchar(255) NOT NULL,
   `tipoUsuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `nombre`, `apellido`, `email`, `dni`, `contraseña`, `tipoUsuario`) VALUES
+(68, 'Lautaro', 'Jimenez', 'ljimenez@gmail.com', 42658906, '$2y$10$jXbk0s6Vzj9BorIAaRM5f.XmuJHwjuYgXHjOeiAIwiRHMrpJo.zgG', 1),
+(69, 'Agustin', 'Grigaliunas', 'agrigaliunas@gmail.com', 1231231123, '$2y$10$1vechbX0xMOvYqbWU1kMpes5j9EuOg7kHrVEgA7uf1.Oojpk97h1u', 1),
+(70, 'Belen', 'Barrionuevo', 'bbarrionuevo@admin.com', 123123123, '$2y$10$Hv6ikzuBQMxo5DstcJAlcu/Gr9xVTkGgQOOX3Cy6XN1Ir8cRcD0YK', 2),
+(71, 'Agustin', 'Dimperio', 'adimperio@admin.com', 12390902, '$2y$10$0EXDNq4P9DvUVmpGsPE4..Q9tLh9qhHL.xDVI0t0ukRQnPkj7Dwue', 2);
 
 --
 -- Índices para tablas volcadas
@@ -229,7 +239,7 @@ ALTER TABLE `libro`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- Restricciones para tablas volcadas

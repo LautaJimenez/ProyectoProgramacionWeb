@@ -119,7 +119,7 @@ function MostrarEditoriales(){
 
 </body>
 
-	<?php
+	<?php 													// Carga de libros a la base de datos
 		
 		if(isset($_POST["CargarLibro"])){
 			$NombreLibro = $_POST['NombreLibro'];

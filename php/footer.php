@@ -9,15 +9,15 @@
 
 			<div class="menu-card">
 				<h4>Email</h4>
-				<a href="mailto:web@mail.com">web@mail.com</a>
+				<a href="mailto:web@mail.com">ventas@e&b.com</a>
 			</div>
 			<div class="menu-card">
-				<h4>Telefono</h4>
-				<a href="">+51 11-1111-1111</a>
+				<h4>Teléfono</h4>
+				<a href="">(54) 11-6348-2216</a>
 			</div>
 			<div class="menu-card">
-				<h4>Locacion</h4>
-				<a href="https://goo.gl/maps/o8E7SbdoYxqCvhM47">Buenos Aires</a>
+				<h4>Ubicación</h4>
+				<a href="https://goo.gl/maps/o8E7SbdoYxqCvhM47">Puerto Madero, Buenos Aires</a>
 			</div>
 
 		</div>
