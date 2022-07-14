@@ -20,11 +20,13 @@
 
 	include("header.php");
 
-	if(isset($_GET["login"])){ // si el boton de logueo esta seteado
-		if($_GET["login"] == "success"){ //si el logueo es exitoso
+	// Pop-ups:
+
+	if(isset($_GET["login"])){ // Si el boton de logueo esta seteado
+		if($_GET["login"] == "success"){ // Si el logueo es exitoso
 			print <<< END
 				<script type="text/javascript">
-					setTimeout(function(){				// Set 250ms timeout till execute next line
+					setTimeout(function(){				
 						alert("¡Logueo exitoso!");
 					},250);
 				</script>
@@ -33,11 +35,11 @@
 		}
 	}
 
-	if(isset($_GET["login"])){ // si el boton de logueo esta seteado
-		if($_GET["login"] == "success"){ //si el logueo es exitoso
+	if(isset($_GET["login"])){ // Si el boton de logueo esta seteado
+		if($_GET["login"] == "success"){ // Si el logueo es exitoso
 			print <<< END
 				<script type="text/javascript">
-					setTimeout(function(){				// Set 250ms timeout till execute next line
+					setTimeout(function(){				
 						alert("¡Logueo exitoso!");
 					},250);
 				</script>
@@ -50,7 +52,7 @@
 		if($_GET["BorrarLibro"] == "success"){ // Si se borra el libro exitosamente.
 			print <<< END
 				<script type="text/javascript">
-					setTimeout(function(){				// Set 250ms timeout till execute next line
+					setTimeout(function(){				
 						alert("¡Eliminacion de libro exitosa!");
 					},250);
 				</script>
@@ -179,6 +181,7 @@ function MostrarLibros($conn){
 <!-- Para que aparezca el slider y los todos los libros apenas comienza a correr la pagina. -->
 <script>
   showSlides(slideIndex);
+  
 </script> 
 
 </body>

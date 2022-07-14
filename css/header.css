@@ -41,7 +41,7 @@ header {
     width: 600px;
     height: 40px;   
     justify-content: center;
-	border-radius: 10px 0 0 10px;
+	border-radius: 10px 10px 10px 10px;
 	border-color: black;
 	border-right-color: black thin;
 }
@@ -135,3 +135,48 @@ header {
 	width: 30px;
 	height: 30px;
 }
+
+/* Boton de busqueda */
+
+#search-result{
+	margin:5px; 
+	padding:5px; 
+	text-decoration:none;
+	line-height:22px;
+	color: black;
+  }
+  
+  #search-result:hover{
+	background-color:rgb(214, 214, 214);
+  }
+
+  #searchbar {
+	background-color: white;
+	height: 15px;
+	border-radius: 30px;
+	padding: 10px;
+	width: 190px;
+  }
+  
+  .input_box {
+	border: none;
+	outline: none;
+	background: none;
+	float: left;
+	padding: 0;
+	color: black;
+	font-size: 16px;
+	line-height: 15px;
+	width: 160px;
+  }
+  
+  .glass {
+	color: black;
+	float: right;
+	text-decoration: none;
+	width: 15px;
+	height: 15px;
+	line-height: 15px;
+	text-align: center;
+	border-radius: 40px;
+  }

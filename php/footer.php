@@ -17,7 +17,7 @@
 			</div>
 			<div class="menu-card">
 				<h4>Ubicación</h4>
-				<a href="https://goo.gl/maps/o8E7SbdoYxqCvhM47">Puerto Madero, Buenos Aires</a>
+				<a href="https://www.google.com/maps/place/Puerto+Madero,+CABA/data=!4m2!3m1!1s0x95a334d9c2d70389:0xe7b5e9ee316678f?sa=X&ved=2ahUKEwjcwrqKn_n4AhVniJUCHbthDjUQ8gF6BAh0EAE">Puerto Madero, Buenos Aires</a>
 			</div>
 
 		</div>

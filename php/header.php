@@ -1,3 +1,5 @@
+<script language="javascript" type="text/javascript"  src="/ProyectoWeb/js/buscar.js"></script>
+
 <?php
 
     // Conexion a la base de datos:
@@ -25,14 +27,25 @@
         </div>
 
         <div class="buscador">
-            <input type="search" id="buscador" placeholder="Buscar... " />
-            <a type="submit" class="botonBusqueda" href="/ProyectoWeb/php/busqueda.php"><img src="../img/lupa.png" alt=""></a>
-
+            <input type="input_box" id="buscador" placeholder="Buscar... "onkeyup="showResult(this.value)"/>
+            <a class="glass" href="#">
+				<i class="fas fa-search"></i>
+			</a>
+		    <div id="livesearch"></div>
         </div>
 
-        <div class="carrito">
-            <a href="/ProyectoWeb/php/carrito.php"><img src="../img/carrito.png" alt=""></a>
-        </div>
+        <?php 
+        if(isset($_SESSION['id'])){ // Solo que aparezca el carrito cuando este la sesion iniciada.
+            $IDUsuario = $_SESSION['id'];
+            print<<<END
+            <div class="carrito">
+            <a href="/ProyectoWeb/php/carrito.php?IDUsuario=$IDUsuario"><img src="../img/carrito.png" alt=""></a>
+            </div>
+            END;
+        }   
+        ?>
+
+        
 
 
         <ul class="navegacion">
@@ -77,5 +90,8 @@
 
         </ul>
         </section>
+
 </header>
+
+
 

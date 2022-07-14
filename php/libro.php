@@ -105,7 +105,10 @@ END;
 				}
 				else{
 					print <<< END
-					<a href="/ProyectoWeb/php/carrito.php" class="btn">Comprar</a>
+					<form method="POST" action="AgregarAlCarrito.php?IDLibro=$IDLibro">
+					<span onclick = "alert('¡Producto agregado al carrito!')" ><input type="submit" style = "width:100%" id = "AgregarAlCarrito" name="AgregarAlCarrito" style="margin:10px 0;"value="Agregar al carrito">
+					</span>
+					</form>
 					END;
 				}
 				

@@ -15,22 +15,21 @@
 
         if($result === false){
             echo "Hay un error en el pedido.";
-        }   
+        }
             
         else{ // Si no hay error en el pedido, que te salte una alerta con registro exitoso.
-
             if($row = mysqli_fetch_assoc($result)){ // obtiene la fila y la almacena en $row (arreglo)
                 $ContraseñaHasheada = $row['contraseña'];
                 $ContraseñaCorrecta = password_verify($ContraseñaUsuarioLogin,$ContraseñaHasheada);  //verificamos si la contraseña es correcta
                 
                 if($ContraseñaCorrecta == false){ // Si la contraseña es incorrecta, tira un mensaje de error y sale.
 
-                    header("Location: ingreso.php?login=failed");
+                    header("Location: ingreso.php?login=incorrectPassword");
    
                     exit();
                 }
 
-                else if($ContraseñaCorrecta == true){
+                else{
                     session_start();   // a cada variable de sesion le almaceno su correspondiente en la base de datos
                     
                     $_SESSION['id'] = $row['id'];
@@ -43,6 +42,12 @@
                     header("Location: home.php?login=success");
                     exit();
                 }
+                
+            }
+
+            else{
+                header("Location: ingreso.php?login=emailNotRegister"); // Si el mail no está registrado, que intente nuevamente.
+                exit();
             }
         }
     }

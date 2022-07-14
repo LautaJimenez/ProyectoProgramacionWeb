@@ -13,24 +13,39 @@
 <?php include("header.php")?>
 <?php
     
+    // MANEJO DE ERRORES:
+
     if(isset($_GET["login"])){ // si el boton de logueo esta seteado
-            if($_GET["login"] == "failed"){ //si el logueo es exitoso
+            if($_GET["login"] == "emailNotRegister"){ //si el logueo es exitoso
                 print <<< END
                     <script type="text/javascript">
-                        setTimeout(function(){				// Set 250ms timeout till execute next line
-                            alert("¡Contraseña incorrecta! Intente nuevamente.");
+                        setTimeout(function(){				
+                            alert("¡El mail no se encuentra registrado! Registrese e intente nuevamente.");
                         },250);
                     </script>
                     
                 END;
             }
+    }
+
+    if(isset($_GET["login"])){ // si el boton de logueo esta seteado
+        if($_GET["login"] == "incorrectPassword"){ //si el logueo es exitoso
+            print <<< END
+                <script type="text/javascript">
+                    setTimeout(function(){				
+                        alert("¡Contraseña incorrecta! Intente nuevamente.");
+                    },250);
+                </script>
+                
+            END;
         }
+    }
 
     if(isset($_GET["register"])){ // si el boton de registro esta seteado
             if($_GET["register"] == "success"){ //si el registro es exitoso
                 print <<< END
                     <script type="text/javascript">
-                        setTimeout(function(){				// Set 250ms timeout till execute next line
+                        setTimeout(function(){				
                             alert("¡Registro exitoso!");
                         },250);
                     </script>
@@ -38,6 +53,20 @@
                 END;
             }
         }
+
+
+    if(isset($_GET["register"])){ // si el boton de registro esta seteado
+        if($_GET["register"] == "failed"){ //si el registro es exitoso
+            print <<< END
+                <script type="text/javascript">
+                    setTimeout(function(){				
+                        alert("Hubo un error en el registro. Intente nuevamente");
+                    },250);
+                </script>
+                
+            END;
+        }
+    }
 ?>
 
 

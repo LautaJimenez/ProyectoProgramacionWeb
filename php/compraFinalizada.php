@@ -16,9 +16,9 @@
         <h1>¡Tu compra ha sido finalizada!</h1>
         <p>Tu e-Book llegará a tu casilla de e-mail dentro de las próximas 24hs.</p>
         <p>Cualquier duda o consulta, podes comunicarte a través de e-mail al correo</p>
-        <a href="mailto: web@mail.com">web@mail.com</a>
+        <a href="mailto: web@mail.com">ventas@e&b.com</a>
         <p>O a través de nuestro Whats-App</p>
-        <p class = "numero">+51 11-1111-1111</p>
+        <p class = "numero">(54) 11-6348-2216</p>
         <h2>¡Muchas gracias por confiar en E&B!</h2>
 
 

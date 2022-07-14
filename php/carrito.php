@@ -12,46 +12,111 @@
 
 <?php include("header.php")?>
 
+<div class="titulo">
+    <h1>Carrito</h1>
+</div>
 
-    <div class = "titulo"><h1>Carrito</h1></div>
+<?php MostrarLibrosEnCarrito($conn)?>
 
-    <div class = "libro" id = "libro1">
-        <img id = "libro" src="../img/libro5.png" alt="">
-        <div class = "info">
-            <h3>El duelo</h3>
-            <p>Gabriel Rolón</p>
-            <p class = "precio">$650</p>
-        </div>
-        <img onclick = "Ocultar()" id = "borrar" src="../img/x.png" alt="">      
-    </div>
+<?php
 
-    <div class = "libro" id = "libro2">
-        <img src="../img/libro3.png" alt="">
-        <div class = "info">
-            <h3>Los guardianes</h3>
-            <p>Josh Grishman</p>
-            <p class = "precio">$650</p>
-        </div>
-        <img onclick = "Ocultar1()" id = "borrar" src="../img/x.png" alt="">  
-    </div>
+function MostrarLibrosEnCarrito($conn){
 
-    <div class = "libro" id = "libro3" styl>
-        <img src="../img/libro2.png" alt="">
-        <div class = "info">
-            <h3>Despierta</h3>
-            <p>Lorena Pronsky</p>
-            <p class = "precio">$650</p>
-        </div>
-        <img onclick = "Ocultar2()" id = "borrar" src="../img/x.png" alt="">  
-    </div>
+    // Obtengo el ID de libro correspondiente al usuario para mostrar en el carrito
 
-    <div class = "finalizarCompra">
-        <a href="/ProyectoWeb/php/compraFinalizada.php" class = "btn">Finalizar compra</a>
-    </div>
+    if(isset($_GET['IDUsuario'])){
+
+        $IDUsuario = $_GET['IDUsuario']; 
+        $sqlCarrito = "SELECT idLibro, idUsuario FROM carrito WHERE idUsuario = $IDUsuario";
+        $result = $conn->query($sqlCarrito);
+        $i = 0;
+        $arrIDLibro = [];
+        
+        if($result == TRUE){
+            $row = mysqli_fetch_assoc($result); 
+
+            while(isset($row)){ //Mientras haya filas las meto en un arreglo
+                $arrIDLibro[$i] = $row;
+                $row = mysqli_fetch_assoc($result);
+                $i++;
+            }
     
+            mysqli_free_result($result); //Liberamos el resultado
+            $lenArrIDLibro = count($arrIDLibro) - 1; // Cantidad de filas
+        
+            while($lenArrIDLibro >= 0){
+                $IDLibro = $arrIDLibro[$lenArrIDLibro]['idLibro'];
+                $lenArrIDLibro--;
+                LibrosEnCarrito($IDLibro,$conn,$IDLibro);
+            }	   
+        } 
+    }
+}
+
+function LibrosEnCarrito($IDLibro,$conn){
+    
+    $sqlLibros = "SELECT nombre,autor,foto,precio,id FROM libro WHERE id = $IDLibro";
+    $result_libros = $conn->query($sqlLibros);
+    $i = 0;
+    $arrLibros = [];
+    
+    if($result_libros == TRUE){
+        $row = mysqli_fetch_assoc($result_libros); 
+
+        while(isset($row)){ //Mientras haya filas las meto en un arreglo
+            $arrLibros[$i] = $row;
+            $row = mysqli_fetch_assoc($result_libros);
+            $i++;
+        }
+
+        mysqli_free_result($result_libros); //Liberamos el resultado
+        $lenArrLibros = count($arrLibros) - 1; // Cantidad de filas
+    
+        while($lenArrLibros >= 0){
+            $NombreLibro = $arrLibros[$lenArrLibros]['nombre'];
+            $AutorLibro = $arrLibros[$lenArrLibros]['autor'];
+            $PrecioLibro = $arrLibros[$lenArrLibros]['precio'];
+            $FotoLibro = $arrLibros[$lenArrLibros]['foto'];
+            ImprimirLibros($NombreLibro,$AutorLibro,$PrecioLibro,$FotoLibro,$IDLibro);
+            $lenArrLibros--;
+
+        }	   
+    } 
+}
+
+function ImprimirLibros($NombreLibro,$AutorLibro,$PrecioLibro,$FotoLibro,$IDLibro){
+    print <<< END
+        <div class="libro" id="libro1">
+        <img id="libro" src="../img/$FotoLibro" alt="">
+        <div class="info">
+            <h3>$NombreLibro</h3>
+            <p>$AutorLibro</p>
+            <p class="precio">$ $PrecioLibro</p>
+        </div>
+        </div>
+        <div >
+        <form style = "margin-left:auto; margin-right: auto; width:5%;"  method="POST"action="BorrarLibroDelCarrito.php?IDLibro=$IDLibro">
+        <input type="submit" id = "BorrarLibroDelCarrito" name="BorrarLibroDelCarrito" style="margin:10px 0;"value="Borrar del carrito">
+        </form>
+        </div>
+    END;
+
+}
+
+print <<< END
+
+    <div class="finalizarCompra">
+    <a href="/ProyectoWeb/php/compraFinalizada.php" class="btn">Finalizar compra</a>
+    </div>
+
 
     <?php include("footer.php")?>
-    
+
     <script src="/ProyectoWeb/js/carrito.js"></script>
-</body>
-</html>
+    </body>
+
+    </html>
+
+END;
+
+?>

@@ -19,8 +19,5 @@ if(isset($_POST['BorrarLibro'])){ // si esta seteado el boton de borrar
     }
 }
 
-
-
-
 ?>
 

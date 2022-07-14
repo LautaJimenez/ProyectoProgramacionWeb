@@ -12,7 +12,8 @@
         $EmailUsuario = $_POST['EmailUsuario'];
         $DNIUsuario = $_POST['DNIUsuario'];
         $ContraseñaUsuario = $_POST['ContraseñaUsuario'];
-        $ContraseñaUsuarioHashed = password_hash($ContraseñaUsuario,PASSWORD_BCRYPT); // Encriptacion la contraseña.
+        $ContraseñaUsuarioHashed = password_hash($ContraseñaUsuario,PASSWORD_BCRYPT); // Encriptacion la contraseña.+
+
         
         if(strpos($EmailUsuario,'@admin.com') !== false){
             $TipoDeUsuario = 2; // ES ADMINISTRADOR
@@ -34,13 +35,8 @@
             header("Location: ingreso.php?register=success");
             exit();
         }
-        
         else{
-            print <<< END
-            <script type="text/javascript">
-            alert("Registro fallido. Intente nuevamente");
-            </script>
-            END;
+            header("Location: ingreso.php?register=failed");
             exit();
         }
     }

@@ -1,163 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<title>tienda de ebooks</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
-	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    <link rel="stylesheet" href="../css/Busqueda.css">
-	<link rel="shortcut icon" href="../img/libros.png">
-	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.1/src/easytimer.min.js"></script>
-	<script language="javascript" type="text/javascript" src="/ProyectoWeb/js/funciones.js"></script>
-</head>
+include("conexion.php");
 
-<body>
+$conn = connectDB();
 
-    <?php include("header.php")?>
+$q =  mysqli_real_escape_string($conn,$_GET['q']); // input de la barra de busqueda
 
-	
+if(strlen($q)>0){ // mientras que la longitud del input sea mayor a 0
 
-	<main>
+    $sql = "SELECT nombre,id FROM libro WHERE nombre LIKE '%$q%' LIMIT 5";         // seleccionamos en la DB con WILDCARDS
+                                                                            // el nombre que contenga a lo escrito en el input
+    $result = $conn->query($sql); // resultado del pedido a la DB
 
-		<h2 class="titulo">Resultados de la búsqueda</h2>
-		<br>
+    if($result === FALSE){
+        header("Location: home.php"); // si hay error en el pedido, redirecciono a index con error
+        exit();
+    }
 
-		<section class="libros busqueda">
-			<div class="listado">
-				<section class="item-listado">
-                    
-					<p>
-                        <img src="../img/libro4.png" alt="Smiley face" style="float:left;width:110px;height:150px;">
-                        <h1 style="display: inline"> Largo pétalo de mar
-                            <a href="/ProyectoWeb/php/EditarLibro.php" class="edicion">Editar </a>
-                        </h1>
-                        <br>
-                        <h1 style="display: inline">Autor: Isabel Allende</h1>
-                        <br>
-                        <h3 style="display: inline">$1000
-                            <a href="" class="eliminacion">Eliminar </a>
-                        </h3>
-                        <br>
-                        <a href="/ProyectoWeb/php/libro.php" class="btn">Comprar </a>
-                        
-                    </p>
-                    
-					
-				</section>
-				<section class="item-listado">
-					<p>
-                        <img src="../img/libro5.png" alt="Smiley face" style="float:left;width:110px;height:150px;">
-                        <h1 style="display: inline">El Duelo
-                            <a href="/ProyectoWeb/php/EditarLibro.php" class="edicion">Editar </a>
-                        </h1>
-                        <br>
-                        <h1 style="display: inline">Autor: Gabriel Rolón</h1>
-                        <br>
-                        <h3 style="display: inline">$1490
-                            <a href="" class="eliminacion">Eliminar </a>
-                        </h3>
-                        <br>
-                        <a href="/ProyectoWeb/php/libro.php" class="btn">Comprar </a>
-                    </p>
-				</section>
-				<section class="item-listado">
-					<p>
-                        <img src="../img/libro14.png" alt="Smiley face" style="float:left;width:110px;height:150px;">
-                        <h1 style="display: inline"> EL libro de los abrazos
-                            <a href="/ProyectoWeb/php/EditarLibro.php" class="edicion">Editar </a>
-                        
-                        </h1>
-                        <br>
-                        <h1 style="display: inline">Autor: Eduardo Galeano</h1>
-                        <br>
-                        <h3 style="display: inline">$1300
-                            <a href="" class="eliminacion">Eliminar </a>
-                        </h3>
-                        <br>
-                        <a href="/ProyectoWeb/php/libro.php" class="btn">Comprar </a>
-                    </p>
-				</section>
-				<section class="item-listado">
-					<p>
-                        <img src="../img/libro13.png" alt="Smiley face" style="float:left;width:110px;height:150px;">
-                        <h1 style="display: inline"> 1984
-                            <a href="/ProyectoWeb/php/EditarLibro.php" class="edicion">Editar </a>
-                        </h1>
-                        <br>
-                        <h1 style="display: inline">Autor: George Orwell</h1>
-                        <br>
-                        <h3 style="display: inline">$1200
-                            <a href="" class="eliminacion">Eliminar </a>
-                        </h3>
-                        <br>
-                        <a href="/ProyectoWeb/php/libro.php" class="btn">Comprar </a>
-                    </p>
-                </section>
-                <section class="item-listado">
-					<p>
-                        <img src="../img/libro12.png" alt="Smiley face" style="float:left;width:110px;height:150px;">
-                        <h1 style="display: inline"> Harry Potter y la Orden del Fénix
-                            <a href="/ProyectoWeb/php/EditarLibro.php" class="edicion">Editar </a>
-                        </h1>
-                        <br>
-                        <h1 style="display: inline">Autor: J.K Rowling</h1>
-                        <br>
-                        <h3 style="display: inline">$1500
-                            <a href="" class="eliminacion">Eliminar </a>
-                        </h3>
-                        <br>
-                        <a href="/ProyectoWeb/php/libro.php" class="btn">Comprar </a>
-                    </p>
-                </section>
-                <section class="item-listado">
-					<p>
-                        <img src="../img/libro11.png" alt="Smiley face" style="float:left;width:110px;height:150px;">
-                        <h1 style="display: inline"> Harry Potter y la Piedra Filosofal
-                            <a href="/ProyectoWeb/php/EditarLibro.php" class="edicion">Editar </a>
-                        </h1>
-                        <br>
-                        <h1 style="display: inline">Autor: J.K Rowling</h1>
-                        <br>
-                        <h3 style="display: inline">$1500
-                            <a href="" class="eliminacion">Eliminar </a>
-                        </h3>
-                        <br>
-                        <a href="/ProyectoWeb/php/libro.php" class="btn">Comprar </a>
-                    </p>
-                </section>
-                <section class="item-listado">
-					<p>
-                        <img src="../img/libro10.png" alt="Smiley face" style="float:left;width:110px;height:150px;">
-                        <h1 style="display: inline"> Cómo Provocar un Incendio y Por Qué
-                            <a href="/ProyectoWeb/php/EditarLibro.php" class="edicion">Editar </a>
-                        </h1>
-                        <br>
-                        <h1 style="display: inline">Autor: Jesse Ball</h1>
-                        <br>
-                        <h3 style="display: inline">$1500
-                            <a href="" class="eliminacion">Eliminar </a>
-                        </h3>
-                        <br>
-                        <a href="/ProyectoWeb/php/libro.php" class="btn">Comprar </a>
-                    </p>
-                </section>
-                
-			</div>
+    else{
+        $i = 0;
+        $arrRow = [];
+        $row = mysqli_fetch_assoc($result); // ponemos filas en arreglo asociativo
+
+        while(isset($row)){ // si hay filas, metemos ese arreglo asociativo en un arreglo
+            $arrRow[$i]=$row ;
+            $row = mysqli_fetch_assoc($result);
+            $i++;
+        }
+        mysqli_free_result($result); // liberamos el resultado
+
+        $lenArrRow = count($arrRow) - 1; // longitud del arreglo de filas
 
 
-		</section>
-	</main>
+        while($lenArrRow >= 0){
+            // creamos variables con lo almacenado en la DB
+            $response = $arrRow[$lenArrRow]['id']; // El ID del libro
+            $NombreLibro = $arrRow[$lenArrRow]['nombre']; // El nombre del libro
+ 
+            if($response){ // si hay una descripcion, imprimimos el resultado de la busqueda
+                print <<< END
+                    <br id="search-height">
+                    <a id="search-result" href="libro.php?id=$response">$NombreLibro</a> 
+                    <br id="search-height">
+                END;
+            }
 
+            $lenArrRow--; // pasamos a la fila siguiente
+        }
+     
 
-	
+    }
 
-	<?php include("footer.php")?>
+}
 
-	<!-- JavaScript -->
-
-</body>
-
-</html>
+?>
