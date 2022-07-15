@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<title>tienda de ebooks</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
-	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-	<link rel="stylesheet" href="../css/libro.css">
-	<link rel="shortcut icon" href="../img/libros.png">
-	<script language="javascript" type="text/javascript" src="/ProyectoWeb/js/funciones.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>tienda de ebooks</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="../css/libro.css">
+    <link rel="shortcut icon" href="../img/libros.png">
+    <script language="javascript" type="text/javascript" src="/ProyectoWeb/js/funciones.js"></script>
 
 </head>
 
 <body>
 
-<?php include("header.php");
+    <?php include("header.php");
 
 // Obtengo la informacion del libro.
 
@@ -104,12 +104,22 @@ END;
 					END;
 				}
 				else{
-					print <<< END
-					<form method="POST" action="AgregarAlCarrito.php?IDLibro=$IDLibro">
-					<span onclick = "alert('¡Producto agregado al carrito!')" ><input type="submit" style = "width:100%" id = "AgregarAlCarrito" name="AgregarAlCarrito" style="margin:10px 0;"value="Agregar al carrito">
-					</span>
-					</form>
-					END;
+					if(isset($_SESSION['id'])){
+						print <<< END
+						<form method="POST" action="AgregarAlCarrito.php?IDLibro=$IDLibro">
+						<span onclick = "alert('¡Producto agregado al carrito!')" ><input type="submit" style = "width:100%" id = "AgregarAlCarrito" name="AgregarAlCarrito" style="margin:10px 0;"value="Agregar al carrito">
+						</span>
+						</form>
+						END;
+					}
+					else{
+						print <<< END
+						<span><input type="submit" style = "width:100%" id = "AgregarAlCarrito" name="AgregarAlCarrito" style="margin:10px 0;"value="Para agregar el producto al carrito, inicie sesión.">
+						</span>
+						<br>
+						END;
+					}
+					
 				}
 				
 				print <<< END

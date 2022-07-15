@@ -11,12 +11,13 @@
 
 <body>
 <?php include("header.php")?>
+
 <?php
     
     // MANEJO DE ERRORES:
 
-    if(isset($_GET["login"])){ // si el boton de logueo esta seteado
-            if($_GET["login"] == "emailNotRegister"){ //si el logueo es exitoso
+    if(isset($_GET["login"])){ // Si el boton de logueo esta seteado
+            if($_GET["login"] == "emailNotRegister"){ // Si el logueo es exitoso
                 print <<< END
                     <script type="text/javascript">
                         setTimeout(function(){				
@@ -56,7 +57,7 @@
 
 
     if(isset($_GET["register"])){ // si el boton de registro esta seteado
-        if($_GET["register"] == "failed"){ //si el registro es exitoso
+        if($_GET["register"] == "failed"){ //si el registro es fallido
             print <<< END
                 <script type="text/javascript">
                     setTimeout(function(){				

@@ -2,38 +2,25 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<title>tienda de ebooks</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
-	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-	<link type="text/css" rel="stylesheet" href="../css/styles.css">
-	<link rel="shortcut icon" href="../img/libros.png">
-	<script language="javascript" type="text/javascript" src="/ProyectoWeb/js/funciones.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>tienda de ebooks</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link type="text/css" rel="stylesheet" href="../css/styles.css">
+    <link rel="shortcut icon" href="../img/libros.png">
+    <script language="javascript" type="text/javascript" src="/ProyectoWeb/js/funciones.js"></script>
 </head>
 
 <body>
 
-	<?php
+    <?php
 
 	// Incluyo el header y abro la conexion en el header.
 
 	include("header.php");
 
 	// Pop-ups:
-
-	if(isset($_GET["login"])){ // Si el boton de logueo esta seteado
-		if($_GET["login"] == "success"){ // Si el logueo es exitoso
-			print <<< END
-				<script type="text/javascript">
-					setTimeout(function(){				
-						alert("¡Logueo exitoso!");
-					},250);
-				</script>
-				
-			END;
-		}
-	}
 
 	if(isset($_GET["login"])){ // Si el boton de logueo esta seteado
 		if($_GET["login"] == "success"){ // Si el logueo es exitoso
@@ -66,7 +53,6 @@
 	
 	print <<< END
 
-	<!-- Carrusel -->
 	<div class="slideshow-container">
 
 		<div class="mySlides fade">
@@ -107,7 +93,7 @@
 		
 	END;
 	
-	MostrarLibros($conn);
+	MostrarLibros($conn); // Dentro del main se ejecuta la función mostrar libros, que se encarga de recorrer "libro" en la base de datos e ir imprimiendo todos los libros.
 	
 	print <<< END
 		</div>	
@@ -135,13 +121,13 @@ function ImprimirLibros($NombreLibro,$AutorLibro,$FotoLibro,$PrecioLibro,$IDLibr
 
 function MostrarLibros($conn){
 
-	$sql = "SELECT * FROM libro";
-	$result = $conn->query($sql);
+	$sql = "SELECT * FROM libro"; // Selecciona todos los elementos de la tabla libro.
+	$result = $conn->query($sql); 
 	$i = 0;
 	$arrRow = []; //Arreglo de filas de la base de datos
 
 	if($result == TRUE){
-		$row = mysqli_fetch_assoc($result); 
+		$row = mysqli_fetch_assoc($result); // Lee linea por linea la tabla.
 
 		while(isset($row)){ //Mientras haya filas las meto en un arreglo
 			$arrRow[$i] = $row;
@@ -178,11 +164,10 @@ function MostrarLibros($conn){
 	END;
 ?>
 
-<!-- Para que aparezca el slider y los todos los libros apenas comienza a correr la pagina. -->
-<script>
-  showSlides(slideIndex);
-  
-</script> 
+    <!-- Para que aparezca el slider y los todos los libros apenas comienza a correr la pagina. -->
+    <script>
+    showSlides(slideIndex);
+    </script>
 
 </body>
 

@@ -1,5 +1,7 @@
 <?php 
     
+    // Conexion: 
+
     function connectDB(){
 
         $conn = mysqli_connect('localhost','root','','proyecto');

@@ -47,7 +47,7 @@ function MostrarLibrosEnCarrito($conn){
             while($lenArrIDLibro >= 0){
                 $IDLibro = $arrIDLibro[$lenArrIDLibro]['idLibro'];
                 $lenArrIDLibro--;
-                LibrosEnCarrito($IDLibro,$conn,$IDLibro);
+                LibrosEnCarrito($IDLibro,$conn);
             }	   
         } 
     }
@@ -95,7 +95,7 @@ function ImprimirLibros($NombreLibro,$AutorLibro,$PrecioLibro,$FotoLibro,$IDLibr
         </div>
         </div>
         <div >
-        <form style = "margin-left:auto; margin-right: auto; width:5%;"  method="POST"action="BorrarLibroDelCarrito.php?IDLibro=$IDLibro">
+        <form style = "margin-left:auto; margin-right: auto; width:5%;"  method="POST" action="BorrarLibroDelCarrito.php?IDLibro=$IDLibro">
         <input type="submit" id = "BorrarLibroDelCarrito" name="BorrarLibroDelCarrito" style="margin:10px 0;"value="Borrar del carrito">
         </form>
         </div>

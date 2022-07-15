@@ -1,6 +1,6 @@
 <?php 
         
-    include("conexion.php");
+    include("conexion.php"); // Se incluye la conexión
     $conn = connectDB();
 
     // Login de usuario.

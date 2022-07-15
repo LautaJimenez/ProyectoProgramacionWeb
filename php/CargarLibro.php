@@ -155,7 +155,7 @@ function MostrarEditoriales(){
 				<script type="text/javascript">
 				alert("Ingreso de libro fallido. Intente nuevamente");
 				</script>
-			END;
+				END;
 			}		
 		}
 		

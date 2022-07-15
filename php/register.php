@@ -1,6 +1,6 @@
 <?php 
 
-    include("conexion.php");
+    include("conexion.php"); // Se incluye la conexión
     $conn = connectDB();
 
     // Registro de usuario.
@@ -12,7 +12,7 @@
         $EmailUsuario = $_POST['EmailUsuario'];
         $DNIUsuario = $_POST['DNIUsuario'];
         $ContraseñaUsuario = $_POST['ContraseñaUsuario'];
-        $ContraseñaUsuarioHashed = password_hash($ContraseñaUsuario,PASSWORD_BCRYPT); // Encriptacion la contraseña.+
+        $ContraseñaUsuarioHashed = password_hash($ContraseñaUsuario,PASSWORD_BCRYPT); // Encriptacion la contraseña.
 
         
         if(strpos($EmailUsuario,'@admin.com') !== false){
@@ -27,11 +27,6 @@
 
         if($result === TRUE){ // Si no hay error en el pedido, que te salte una alerta con registro exitoso.
             
-            print <<< END
-                <script type="text/javascript">
-                alert("Registro exitoso!");
-                </script>
-            END;
             header("Location: ingreso.php?register=success");
             exit();
         }

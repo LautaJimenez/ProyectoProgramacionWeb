@@ -13,7 +13,7 @@ if(strlen($q)>0){ // mientras que la longitud del input sea mayor a 0
     $result = $conn->query($sql); // resultado del pedido a la DB
 
     if($result === FALSE){
-        header("Location: home.php"); // si hay error en el pedido, redirecciono a index con error
+        header("Location: home.php"); // si hay error en el pedido, redirecciono a home con error
         exit();
     }
 
@@ -34,13 +34,13 @@ if(strlen($q)>0){ // mientras que la longitud del input sea mayor a 0
 
         while($lenArrRow >= 0){
             // creamos variables con lo almacenado en la DB
-            $response = $arrRow[$lenArrRow]['id']; // El ID del libro
+            $idLibro = $arrRow[$lenArrRow]['id']; // El ID del libro
             $NombreLibro = $arrRow[$lenArrRow]['nombre']; // El nombre del libro
  
-            if($response){ // si hay una descripcion, imprimimos el resultado de la busqueda
+            if($idLibro){ // si hay una descripcion, imprimimos el resultado de la busqueda
                 print <<< END
                     <br id="search-height">
-                    <a id="search-result" href="libro.php?id=$response">$NombreLibro</a> 
+                    <a id="search-result" href="libro.php?id=$idLibro">$NombreLibro</a> 
                     <br id="search-height">
                 END;
             }

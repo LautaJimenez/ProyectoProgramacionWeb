@@ -32,7 +32,7 @@ function showResult(str){ // str es el input de la barra de busquedas
       }
     }
 
-    ajax.open("GET","busqueda.php?q="+str, true); // en metodo GET, en el archivo buscar.php, mandando como variable q = el input de la barra
+    ajax.open("GET","busqueda.php?q="+str, true); // en metodo GET, en el archivo busqueda.php, mandando como variable q = el input de la barra
                                           // open especifica el tipo de pedido
                                           // true = activado el async
     ajax.send(); // mandamos la peticion
