@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-07-2022 a las 00:48:07
+-- Tiempo de generación: 15-07-2022 a las 04:10:07
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -146,7 +146,8 @@ INSERT INTO `libro` (`id`, `nombre`, `autor`, `precio`, `idEditorial`, `paginas`
 (52, 'Guía del Autoestopista Galáctico', 'Douglas Adams', 2499, 4, 296, 'Español', '2022-05-04', 'Un jueves a la hora de comer, la Tierra es inesperadamente demolida para poder construir una nueva autopista hiperespacial. Arthur Dent, un tipo de lo más corriente que esa misma mañana ha visto cómo echaban abajo su propia casa, considera que eso supera lo que una persona puede soportar. Pero, desgraciadamente, el fin de semana no ha hecho más que empezar, y la galaxia es un lugar extraño y sorprendente. Arthur huirá de la Tierra junto con un amigo suyo, Ford Prefect, que resultará ser un extraterrestre emparentado con Zaphod Beeblebrox, un pirata esquizoide de dos cabezas que fue Presidente de la Galaxia, en cuya nave Arthur conocerá al resto de personajes que lo acompañarán a lo largo de su periplo espacial: un androide paranoide y una terrícola que, como él, ha logrado escapar. Gracias a esta ineludible aventura, Dent descubrirá muchas cosas acerca de la existencia, pero, tal como aconseja la Guía del autoestopista galáctico, que no cunda el pánico.', '9788433973108', 2, 'libro29.jpg', 0),
 (54, 'Hábitos Atómicos', 'James Clear', 2100, 1, 336, 'Español', '2020-09-08', 'Un diario basado en la ciencia del cambio de hábitos, diseñado por el autor del gran bestseller de Diana, Hábitos atómicos, James Clear.\r\nTras vender más de 30.000 ejemplares de su libro en España, por fin llega Diario de Hábitos, un método científico basado en las investigaciones del autor, especialista en cambio de hábitos, para lograr planificar, medir y motivar tu cambio. Ya sea que te hayas propuesto ser más productivo, hacer más deporte, dejar de fumar o comer más sano, este diario será tu mejor herramienta para lograr que tengas éxito en tu viaje y que esos cambios minúsculos sean tan poderosos como un tsunami.', '9788418118036', 4, 'libro31.jpg', 0),
 (55, 'El poder de los Hábitos', 'Charles Duhigg', 2250, 16, 416, 'Español', '2019-03-28', 'En El poder de los hábitos, el premiado periodista Charles Duhigg nos lleva al límite de los descubrimientos científicos que explican por que existen los hábitos, cómo nos condicionan y cómo cambiarlos. Combinando información exhaustiva con descripciones fascinantes, Duhigg presenta una manera completamente nueva de entender la naturaleza humana y su potencial.\r\n\r\nEn esencia, El poder de los hábitos contiene un mensaje estimulante: la clave para hacer ejercicio con regularidad, perder peso, ser más productivo y conseguir el exito consiste en entender el modo en que funcionan los hábitos. Como demuestra Duhigg, si somos capaces de sacar partido a este nuevo metodo, conseguiremos transformar nuestra vida laboral, social y personal.', '9788417664138', 4, 'libro32.jpg', 0),
-(56, 'El prinicipito', 'De Saint Exupery Antoine', 990, 12, 112, 'Español', '2016-02-23', 'Su comentario será moderado antes de su publicación. Este espacio le permite compartir su opinión sobre el libro con otros lectores, evite comentarios que no sean pertinentes ni alusivos al libro. Por favor sea amable, respetuoso y cuide su lenguaje.\r\n\r\n', '9789876848039', 10, 'libro24.png', 0);
+(56, 'El prinicipito', 'De Saint Exupery Antoine', 990, 12, 112, 'Español', '2016-02-23', 'Su comentario será moderado antes de su publicación. Este espacio le permite compartir su opinión sobre el libro con otros lectores, evite comentarios que no sean pertinentes ni alusivos al libro. Por favor sea amable, respetuoso y cuide su lenguaje.\r\n\r\n', '9789876848039', 10, 'libro24.png', 0),
+(59, 'Capitalismo Progresista', 'Joseph E. Stiglitz', 5749, 11, 496, 'Español', '2020-07-10', 'Todos tenemos la sensación de que el sistema económico se inclina a favor de las grandes empresas. Unas pocas corporaciones dominan sectores enteros; la industria financiera regula la economía a su antojo; los gobiernos negocian acuerdos comerciales que no benefician en absoluto a los intereses de los ciudadanos; y las tecnológicas custodian celosamente una ingente cantidad de datos personales sin supervisión y trafican con ellos. Las nuevas tecnologías, lejos de ayudar, tienden a empeorar las cosas, contribuyendo a disparar la desigualdad, ralentizar el crecimiento y fomentar el desempleo.\r\n\r\nPese a todo, Joseph Stiglitz, premio Nobel de Economía, insiste en que, aunque no lo parezca, tenemos el poder de reconstruir los cimientos del capitalismo. En este oportuno libro, identifica las verdaderas fuentes de la prosperidad económica compartida, basadas en la investigación, la educación y el imperio de la ley.\r\n\r\nConsciente de los peligros del fundamentalismo de mercado, y de las amenazas que se ciernen sobre el poder judicial, las universidades y los medios de comunicación, instituciones que durante mucho tiempo han sido la base de la prosperidad y la democracia, revela cómo hemos llegado a esta situación y marca el camino para combatir algunos de los mayores desafíos de nuestro tiempo.', '9789877370539', 5, 'libro27.png', 0);
 
 -- --------------------------------------------------------
 
@@ -191,7 +192,9 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`id`, `nombre`, `apellido`, `email`, `dni`, `contraseña`, `tipoUsuario`, `idCarritoUsuario`) VALUES
 (5, 'Lautaro', 'Jimenez', 'lauta.jimenez@gmail.com', 42658906, '$2y$10$ULg9yz.KlboBxOeoPgf56.lyzqi72.ZAhZFUzbPGeTwNBCh9IWSUO', 1, 0),
 (6, 'Agustin', 'Dimperio', 'adimperio@admin.com', 12312837, '$2y$10$Czt/iW067jGW718ilTBp7OFX2GJ1NG9JANfKsaCJTFl7QfJYnerUy', 2, 0),
-(7, 'Belen', 'Barrionuevo', 'bbarrionuevo@admin.com', 126351623, '$2y$10$pVEtp6bNpDR24tEM0vxjDucxHCb/lWqU3twRNOBYty2PnHDNPpAae', 2, 0);
+(7, 'Belen', 'Barrionuevo', 'bbarrionuevo@admin.com', 126351623, '$2y$10$pVEtp6bNpDR24tEM0vxjDucxHCb/lWqU3twRNOBYty2PnHDNPpAae', 2, 0),
+(8, 'Lionel', 'Messi', 'lmessi@gmail.com', 123123123, '$2y$10$ryn9b1Sg3nRj9t47/xODQe0XgUEwmWRlrPgSBsjhl8nb9DpgmCkTu', 1, 0),
+(9, 'Kun', 'Aguero', 'kaguero@gmail.com', 182379182, '$2y$10$n4zVnQPXChsc6TwR2/GIr.S.BBsT3iGqZK2JP5R0DxxjzIyHPiZIy', 1, 0);
 
 --
 -- Índices para tablas volcadas
@@ -254,13 +257,13 @@ ALTER TABLE `editorial`
 -- AUTO_INCREMENT de la tabla `libro`
 --
 ALTER TABLE `libro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restricciones para tablas volcadas
