@@ -104,11 +104,11 @@
             <h2>Registrarse</h2>
             <form action="register.php" method = "post">
                 
-                <input type="text" placeholder="Nombre" name = "NombreUsuario" required>
+                <input type="text" placeholder="Nombre" name = "NombreUsuario" onkeyup="lettersOnly(this)" required>
 
-                <input type="text" placeholder="Apellido" name = "ApellidoUsuario" required>
+                <input type="text" placeholder="Apellido" name = "ApellidoUsuario" onkeyup="lettersOnly(this)" required>
 
-                <input type="email" placeholder="Correo Electrónico" name = "EmailUsuario" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' 
+                <input type="email" placeholder="Correo Electrónico" id = "Email-regist" name = "EmailUsuario" pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' 
                 onkeyup="validateEmail(document.getElementById('Email-regist'))" value="" title="Debe ingresar un email valido." required>
 
                 <input type="number" placeholder="DNI" name = "DNIUsuario" id = "DNI-regist" pattern='^[\d]{1,3}.?[\d]{3,3}.?[\d]{3,3}$' 

@@ -19,6 +19,11 @@ function Registro() {
 
 const IS_VALID = document.getElementsByClassName("is-valid");
 
+function lettersOnly(input) {
+    var regex = /[^a-z ]/gi;
+    input.value = input.value.replace(regex, "");
+}
+
 function validateEmail(formType){
     const regex = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
 
