@@ -120,9 +120,6 @@
                 <input type="submit" name = "register" value="Registrarse">
             </form>
         </div>
-        <div class="reset-password">
-            <a href="#">Olvidé mi contraseña</a>
-        </div>
     </div>
 
 </body>
